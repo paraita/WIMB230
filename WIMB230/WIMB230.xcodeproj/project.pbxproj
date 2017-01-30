@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ED342A991E3FCD1200D8D212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342A981E3FCD1200D8D212 /* AppDelegate.swift */; };
+		ED342A9B1E3FCD1200D8D212 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342A9A1E3FCD1200D8D212 /* ViewController.swift */; };
+		ED342A9E1E3FCD1200D8D212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED342A9C1E3FCD1200D8D212 /* Main.storyboard */; };
+		ED342AA01E3FCD1200D8D212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED342A9F1E3FCD1200D8D212 /* Assets.xcassets */; };
+		ED342AA31E3FCD1200D8D212 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED342AA11E3FCD1200D8D212 /* LaunchScreen.storyboard */; };
+		ED342AAE1E3FCD1300D8D212 /* WIMB230Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342AAD1E3FCD1300D8D212 /* WIMB230Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED342AAA1E3FCD1300D8D212 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED342A8D1E3FCD1200D8D212 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED342A941E3FCD1200D8D212;
+			remoteInfo = WIMB230;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ED342A951E3FCD1200D8D212 /* WIMB230.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMB230.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED342A981E3FCD1200D8D212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED342A9A1E3FCD1200D8D212 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED342A9D1E3FCD1200D8D212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED342A9F1E3FCD1200D8D212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED342AA21E3FCD1200D8D212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED342AA41E3FCD1200D8D212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED342AA91E3FCD1300D8D212 /* WIMB230Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WIMB230Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED342AAD1E3FCD1300D8D212 /* WIMB230Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIMB230Tests.swift; sourceTree = "<group>"; };
+		ED342AAF1E3FCD1300D8D212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED342A921E3FCD1200D8D212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED342AA61E3FCD1300D8D212 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ED342A8C1E3FCD1200D8D212 = {
+			isa = PBXGroup;
+			children = (
+				ED342A971E3FCD1200D8D212 /* WIMB230 */,
+				ED342AAC1E3FCD1300D8D212 /* WIMB230Tests */,
+				ED342A961E3FCD1200D8D212 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ED342A961E3FCD1200D8D212 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED342A951E3FCD1200D8D212 /* WIMB230.app */,
+				ED342AA91E3FCD1300D8D212 /* WIMB230Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED342A971E3FCD1200D8D212 /* WIMB230 */ = {
+			isa = PBXGroup;
+			children = (
+				ED342A981E3FCD1200D8D212 /* AppDelegate.swift */,
+				ED342A9A1E3FCD1200D8D212 /* ViewController.swift */,
+				ED342A9C1E3FCD1200D8D212 /* Main.storyboard */,
+				ED342A9F1E3FCD1200D8D212 /* Assets.xcassets */,
+				ED342AA11E3FCD1200D8D212 /* LaunchScreen.storyboard */,
+				ED342AA41E3FCD1200D8D212 /* Info.plist */,
+			);
+			path = WIMB230;
+			sourceTree = "<group>";
+		};
+		ED342AAC1E3FCD1300D8D212 /* WIMB230Tests */ = {
+			isa = PBXGroup;
+			children = (
+				ED342AAD1E3FCD1300D8D212 /* WIMB230Tests.swift */,
+				ED342AAF1E3FCD1300D8D212 /* Info.plist */,
+			);
+			path = WIMB230Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED342A941E3FCD1200D8D212 /* WIMB230 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED342AB21E3FCD1300D8D212 /* Build configuration list for PBXNativeTarget "WIMB230" */;
+			buildPhases = (
+				ED342A911E3FCD1200D8D212 /* Sources */,
+				ED342A921E3FCD1200D8D212 /* Frameworks */,
+				ED342A931E3FCD1200D8D212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WIMB230;
+			productName = WIMB230;
+			productReference = ED342A951E3FCD1200D8D212 /* WIMB230.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED342AA81E3FCD1300D8D212 /* WIMB230Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED342AB51E3FCD1300D8D212 /* Build configuration list for PBXNativeTarget "WIMB230Tests" */;
+			buildPhases = (
+				ED342AA51E3FCD1300D8D212 /* Sources */,
+				ED342AA61E3FCD1300D8D212 /* Frameworks */,
+				ED342AA71E3FCD1300D8D212 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED342AAB1E3FCD1300D8D212 /* PBXTargetDependency */,
+			);
+			name = WIMB230Tests;
+			productName = WIMB230Tests;
+			productReference = ED342AA91E3FCD1300D8D212 /* WIMB230Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED342A8D1E3FCD1200D8D212 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Paraita;
+				TargetAttributes = {
+					ED342A941E3FCD1200D8D212 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 66S33T67HD;
+						ProvisioningStyle = Automatic;
+					};
+					ED342AA81E3FCD1300D8D212 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 66S33T67HD;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED342A941E3FCD1200D8D212;
+					};
+				};
+			};
+			buildConfigurationList = ED342A901E3FCD1200D8D212 /* Build configuration list for PBXProject "WIMB230" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED342A8C1E3FCD1200D8D212;
+			productRefGroup = ED342A961E3FCD1200D8D212 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED342A941E3FCD1200D8D212 /* WIMB230 */,
+				ED342AA81E3FCD1300D8D212 /* WIMB230Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED342A931E3FCD1200D8D212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED342AA31E3FCD1200D8D212 /* LaunchScreen.storyboard in Resources */,
+				ED342AA01E3FCD1200D8D212 /* Assets.xcassets in Resources */,
+				ED342A9E1E3FCD1200D8D212 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED342AA71E3FCD1300D8D212 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED342A911E3FCD1200D8D212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED342A9B1E3FCD1200D8D212 /* ViewController.swift in Sources */,
+				ED342A991E3FCD1200D8D212 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED342AA51E3FCD1300D8D212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED342AAE1E3FCD1300D8D212 /* WIMB230Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED342AAB1E3FCD1300D8D212 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED342A941E3FCD1200D8D212 /* WIMB230 */;
+			targetProxy = ED342AAA1E3FCD1300D8D212 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED342A9C1E3FCD1200D8D212 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED342A9D1E3FCD1200D8D212 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED342AA11E3FCD1200D8D212 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED342AA21E3FCD1200D8D212 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED342AB01E3FCD1300D8D212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED342AB11E3FCD1300D8D212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED342AB31E3FCD1300D8D212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 66S33T67HD;
+				INFOPLIST_FILE = WIMB230/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hipopochat.WIMB230;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ED342AB41E3FCD1300D8D212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 66S33T67HD;
+				INFOPLIST_FILE = WIMB230/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hipopochat.WIMB230;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		ED342AB61E3FCD1300D8D212 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 66S33T67HD;
+				INFOPLIST_FILE = WIMB230Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hipopochat.WIMB230Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WIMB230.app/WIMB230";
+			};
+			name = Debug;
+		};
+		ED342AB71E3FCD1300D8D212 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 66S33T67HD;
+				INFOPLIST_FILE = WIMB230Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hipopochat.WIMB230Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WIMB230.app/WIMB230";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED342A901E3FCD1200D8D212 /* Build configuration list for PBXProject "WIMB230" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED342AB01E3FCD1300D8D212 /* Debug */,
+				ED342AB11E3FCD1300D8D212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED342AB21E3FCD1300D8D212 /* Build configuration list for PBXNativeTarget "WIMB230" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED342AB31E3FCD1300D8D212 /* Debug */,
+				ED342AB41E3FCD1300D8D212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ED342AB51E3FCD1300D8D212 /* Build configuration list for PBXNativeTarget "WIMB230Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED342AB61E3FCD1300D8D212 /* Debug */,
+				ED342AB71E3FCD1300D8D212 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED342A8D1E3FCD1200D8D212 /* Project object */;
+}
