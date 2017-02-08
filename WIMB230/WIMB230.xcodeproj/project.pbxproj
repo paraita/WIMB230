@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED342A991E3FCD1200D8D212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342A981E3FCD1200D8D212 /* AppDelegate.swift */; };
-		ED342A9B1E3FCD1200D8D212 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342A9A1E3FCD1200D8D212 /* ViewController.swift */; };
+		ED342A9B1E3FCD1200D8D212 /* WIMB230ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342A9A1E3FCD1200D8D212 /* WIMB230ViewController.swift */; };
 		ED342A9E1E3FCD1200D8D212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED342A9C1E3FCD1200D8D212 /* Main.storyboard */; };
 		ED342AA01E3FCD1200D8D212 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED342A9F1E3FCD1200D8D212 /* Assets.xcassets */; };
 		ED342AA31E3FCD1200D8D212 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED342AA11E3FCD1200D8D212 /* LaunchScreen.storyboard */; };
@@ -131,7 +131,7 @@
 /* Begin PBXFileReference section */
 		ED342A951E3FCD1200D8D212 /* WIMB230.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMB230.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED342A981E3FCD1200D8D212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED342A9A1E3FCD1200D8D212 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED342A9A1E3FCD1200D8D212 /* WIMB230ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIMB230ViewController.swift; sourceTree = "<group>"; };
 		ED342A9D1E3FCD1200D8D212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED342A9F1E3FCD1200D8D212 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED342AA21E3FCD1200D8D212 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -141,6 +141,7 @@
 		ED342AAF1E3FCD1300D8D212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED342ACB1E3FD7C500D8D212 /* BusPassage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusPassage.swift; sourceTree = "<group>"; };
 		ED342B221E3FE27600D8D212 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../Carthage/Checkouts/AlamofireObjectMapper/Carthage/Checkouts/Alamofire/build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
+		ED6E4F271E4BAF8A00DFDA60 /* TestStuff.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestStuff.playground; sourceTree = "<group>"; };
 		ED782C941E3FE684004D11E8 /* AlamofireObjectMapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireObjectMapper.xcodeproj; path = ../Carthage/Checkouts/AlamofireObjectMapper/AlamofireObjectMapper.xcodeproj; sourceTree = "<group>"; };
 		ED782CAE1E3FE6D3004D11E8 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED782CB11E3FE6D3004D11E8 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,7 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				ED342A981E3FCD1200D8D212 /* AppDelegate.swift */,
-				ED342A9A1E3FCD1200D8D212 /* ViewController.swift */,
+				ED342A9A1E3FCD1200D8D212 /* WIMB230ViewController.swift */,
+				ED6E4F271E4BAF8A00DFDA60 /* TestStuff.playground */,
 				ED342ACB1E3FD7C500D8D212 /* BusPassage.swift */,
 				ED342A9C1E3FCD1200D8D212 /* Main.storyboard */,
 				ED342A9F1E3FCD1200D8D212 /* Assets.xcassets */,
@@ -430,7 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED342A9B1E3FCD1200D8D212 /* ViewController.swift in Sources */,
+				ED342A9B1E3FCD1200D8D212 /* WIMB230ViewController.swift in Sources */,
 				ED342ACC1E3FD7C500D8D212 /* BusPassage.swift in Sources */,
 				ED342A991E3FCD1200D8D212 /* AppDelegate.swift in Sources */,
 			);
