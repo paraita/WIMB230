@@ -17,9 +17,9 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var stopId: UITextField!
     
-    var busPassages = [BusPassage]()
     let refresher = PullToRefresh()
     let dateFormatter = DateFormatter()
+    let client = WIMB230Client()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         let defaults = UserDefaults.standard
         self.stopId.text = String(defaults.integer(forKey: "stopId"))
         self.tableView.addPullToRefresh(PullToRefresh()) {
-            self.fetchBusPassages()
+            self.fetch()
         }
         self.stopId.keyboardType = UIKeyboardType.decimalPad
         
@@ -44,8 +44,16 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         toolbar.sizeToFit()
         //setting toolbar as inputAccessoryView
         self.stopId.inputAccessoryView = toolbar
-        
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(refreshTableView),
+                                               name: NSNotification.Name(rawValue: "fetchedData"),
+                                               object: nil)
+    }
+    
+    func refreshTableView() {
+        self.tableView.reloadData()
+        self.tableView.endRefreshing(at: .top)
     }
     
     func doneButtonAction(){
@@ -73,69 +81,16 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func fetchBusPassages() {
-        if let param = self.stopId.text {
-            print("Fetching bus passages for stop \(param)")
-            Alamofire.request("https://whereismybus230.herokuapp.com/bus230",
-                              parameters:["stop_id": param])
-                .responseArray {
-                    (response: DataResponse<[BusPassage]>) in
-                let busPassages = response.result.value
-                if let busPassages = busPassages {
-                    self.busPassages = busPassages
-                    print("Bus passages: [")
-                    for busPassage in self.busPassages {
-                        print(busPassage.bus_time!)
-                        print(busPassage.dest!)
-                        print(busPassage.is_real_time!)
-                    }
-                    print("]")
-                    if (self.busPassages.count == 0) {
-                        self.mockData()
-                    }
-                    self.tableView.reloadData()
-                    self.tableView.endRefreshing(at: .top)
-                }
-            }
-        }
-    }
-    
-    func mockData() {
-        self.busPassages.removeAll()
-        let dateNow = Date()
-        
-        let b1 = BusPassage(bus_time: "2017-01-29 17:15:01",
-                            dest: "Mocked Cathédrale Vielle-Ville",
-                            is_real_time: true)
-        let b2 = BusPassage(bus_time: "2017-01-29 17:22:02",
-                            dest: "Mocked Gambetta",
-                            is_real_time: true)
-        let b3 = BusPassage(bus_time: "2017-01-29 17:32:03",
-                            dest: "Mocked Cathédrale Vielle-Ville",
-                            is_real_time: false)
-        let b4 = BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(72)),
-                            dest: "Mocked Cathédrale Vielle-Ville",
-                            is_real_time: false)
-        let b5 = BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(120)),
-                            dest: "Mocked Gambetta",
-                            is_real_time: true)
-        let b6 = BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(431)),
-                            dest: "Mocked Cathédrale Vielle-Ville",
-                            is_real_time: false)
-        self.busPassages.append(b1)
-        self.busPassages.append(b2)
-        self.busPassages.append(b3)
-        self.busPassages.append(b4)
-        self.busPassages.append(b5)
-        self.busPassages.append(b6)
+    func fetch() {
+        self.client.fetchBusPassages(stopId: Int(self.stopId.text!)!)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return busPassages.count
+        return self.client.busPassages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -145,7 +100,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func configureCell(_ cell: UITableViewCell, atIndex index: Int) {
-        let busPassage = busPassages[index]
+        let busPassage = self.client.busPassages[index]
         let dateNow = Date()
         let busTimeInt = lround((self.dateFormatter.date(from: busPassage.bus_time!)?.timeIntervalSince(dateNow))! / 60)
         var busTimeStr = "In \(busTimeInt) "
