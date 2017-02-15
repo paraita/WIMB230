@@ -102,7 +102,13 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     func configureCell(_ cell: UITableViewCell, atIndex index: Int) {
         let busPassage = self.client.busPassages[index]
         let dateNow = Date()
-        let busTimeInt = lround((self.dateFormatter.date(from: busPassage.bus_time!)?.timeIntervalSince(dateNow))! / 60)
+        let regex = try! NSRegularExpression(pattern: "\\..*$", options: NSRegularExpression.Options.caseInsensitive)
+        let range = NSMakeRange(0, busPassage.bus_time!.characters.count)
+        let cleanDateBus = regex.stringByReplacingMatches(in: busPassage.bus_time!, options: [], range: range, withTemplate: "")
+            .replacingOccurrences(of: "T", with: " ")
+        let dateBus = self.dateFormatter.date(from: cleanDateBus)
+        let deltaTime = dateBus?.timeIntervalSince(dateNow)
+        let busTimeInt = lround(deltaTime! / 60)
         var busTimeStr = "In \(busTimeInt) "
         if (busTimeInt > 1) {
             busTimeStr += "minutes !"

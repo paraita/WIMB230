@@ -14,6 +14,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet var mainLabel: UILabel!
     let client = WIMB230Client()
     let dateFormatter = DateFormatter()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     }
     
+    @IBAction func refreshWidget(_ sender: Any) {
+        self.mainLabel.text = "Searching..."
+        self.client.fetchBusPassages(stopId: 1939)
+    }
+    
     func refreshLabel() {
         var strResult = ""
         let dateNow = Date()
         
         for bp in self.client.busPassages {
+            
             let dateBusRaw = bp.bus_time!
             
             let regex = try! NSRegularExpression(pattern: "\\..*$", options: NSRegularExpression.Options.caseInsensitive)
@@ -45,7 +52,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 busTimeStr += "minutes !"
             }
             else {
-                busTimeStr += "minute !!!"
+                busTimeStr = "IMMEDIATE !"
             }
             if (!bp.is_real_time!) {
                 busTimeStr += " *"
@@ -87,7 +94,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
+        
+//        let stopId = defaults.integer(forKey: "stopId")
+//        if stopId != 0 {
+//            self.client.fetchBusPassages(stopId: stopId)
+//        }
+//        else {
+//            self.mainLabel.text = "No Stop ID set !"
+//        }
         self.client.fetchBusPassages(stopId: 1939)
+        
         
         completionHandler(NCUpdateResult.newData)
     }

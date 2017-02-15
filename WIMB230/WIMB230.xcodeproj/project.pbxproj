@@ -32,6 +32,7 @@
 		EDB19AA91E54805B0044C933 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB19AA71E54805B0044C933 /* ObjectMapper.framework */; };
 		EDB19AAA1E54806E0044C933 /* WIMB230Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB19AA11E539ABD0044C933 /* WIMB230Client.swift */; };
 		EDB19AAB1E54806E0044C933 /* BusPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342ACB1E3FD7C500D8D212 /* BusPassage.swift */; };
+		EDB19AAC1E54E0340044C933 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED342A9F1E3FCD1200D8D212 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -517,6 +518,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB19AAC1E54E0340044C933 /* Assets.xcassets in Resources */,
 				EDB19A911E539A3F0044C933 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
