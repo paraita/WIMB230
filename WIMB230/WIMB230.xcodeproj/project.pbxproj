@@ -27,6 +27,11 @@
 		EDB19A911E539A3F0044C933 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB19A8F1E539A3F0044C933 /* MainInterface.storyboard */; };
 		EDB19A961E539A3F0044C933 /* WIMB230Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EDB19A891E539A3F0044C933 /* WIMB230Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EDB19AA21E539ABD0044C933 /* WIMB230Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB19AA11E539ABD0044C933 /* WIMB230Client.swift */; };
+		EDB19AA51E54805B0044C933 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED782CA11E3FE685004D11E8 /* AlamofireObjectMapper.framework */; };
+		EDB19AA81E54805B0044C933 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB19AA61E54805B0044C933 /* Alamofire.framework */; };
+		EDB19AA91E54805B0044C933 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB19AA71E54805B0044C933 /* ObjectMapper.framework */; };
+		EDB19AAA1E54806E0044C933 /* WIMB230Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB19AA11E539ABD0044C933 /* WIMB230Client.swift */; };
+		EDB19AAB1E54806E0044C933 /* BusPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342ACB1E3FD7C500D8D212 /* BusPassage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +180,8 @@
 		EDB19A901E539A3F0044C933 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		EDB19A921E539A3F0044C933 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDB19AA11E539ABD0044C933 /* WIMB230Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WIMB230Client.swift; sourceTree = "<group>"; };
+		EDB19AA61E54805B0044C933 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/WIMB230-eomyuakrpzvdevermjufsobgmlfz/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
+		EDB19AA71E54805B0044C933 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../Library/Developer/Xcode/DerivedData/WIMB230-eomyuakrpzvdevermjufsobgmlfz/Build/Products/Debug-iphonesimulator/ObjectMapper.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +207,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB19AA81E54805B0044C933 /* Alamofire.framework in Frameworks */,
+				EDB19AA91E54805B0044C933 /* ObjectMapper.framework in Frameworks */,
+				EDB19AA51E54805B0044C933 /* AlamofireObjectMapper.framework in Frameworks */,
 				EDB19A8B1E539A3F0044C933 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +245,7 @@
 		ED342A971E3FCD1200D8D212 /* WIMB230 */ = {
 			isa = PBXGroup;
 			children = (
+				EDB19AA11E539ABD0044C933 /* WIMB230Client.swift */,
 				ED342A981E3FCD1200D8D212 /* AppDelegate.swift */,
 				ED342A9A1E3FCD1200D8D212 /* WIMB230ViewController.swift */,
 				ED6E4F271E4BAF8A00DFDA60 /* TestStuff.playground */,
@@ -243,7 +254,6 @@
 				ED342A9F1E3FCD1200D8D212 /* Assets.xcassets */,
 				ED342AA11E3FCD1200D8D212 /* LaunchScreen.storyboard */,
 				ED342AA41E3FCD1200D8D212 /* Info.plist */,
-				EDB19AA11E539ABD0044C933 /* WIMB230Client.swift */,
 			);
 			path = WIMB230;
 			sourceTree = "<group>";
@@ -260,6 +270,8 @@
 		ED342B211E3FE27600D8D212 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDB19AA61E54805B0044C933 /* Alamofire.framework */,
+				EDB19AA71E54805B0044C933 /* ObjectMapper.framework */,
 				ED342B221E3FE27600D8D212 /* Alamofire.framework */,
 				EDB19A8A1E539A3F0044C933 /* NotificationCenter.framework */,
 			);
@@ -535,6 +547,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB19AAA1E54806E0044C933 /* WIMB230Client.swift in Sources */,
+				EDB19AAB1E54806E0044C933 /* BusPassage.swift in Sources */,
 				EDB19A8E1E539A3F0044C933 /* TodayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

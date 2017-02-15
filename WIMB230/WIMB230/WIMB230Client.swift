@@ -7,6 +7,7 @@
 //
 import Foundation
 import Alamofire
+import AlamofireObjectMapper
 import UIKit
 
 class WIMB230Client {
