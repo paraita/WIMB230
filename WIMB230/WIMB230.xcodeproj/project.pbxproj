@@ -824,6 +824,7 @@
 				EDB19A981E539A3F0044C933 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

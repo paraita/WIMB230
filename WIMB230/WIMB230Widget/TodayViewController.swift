@@ -9,12 +9,14 @@
 import UIKit
 import NotificationCenter
 
-class TodayViewController: UIViewController, NCWidgetProviding {
+class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataSource {
         
     @IBOutlet var mainLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
     let client = WIMB230Client()
     let dateFormatter = DateFormatter()
     let defaults = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,55 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                                                name: NSNotification.Name(rawValue: "fetchedData"),
                                                object: nil)
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        self.tableView.rowHeight = 22.0
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "PARATOI2")
+        let bp = self.client.busPassages[indexPath.row]
+        let dateBusRaw = bp.bus_time!
+        let dateNow = Date()
+        let regex = try! NSRegularExpression(pattern: "\\..*$", options: NSRegularExpression.Options.caseInsensitive)
+        let range = NSMakeRange(0, dateBusRaw.characters.count)
+        let cleanDateBus = regex.stringByReplacingMatches(in: dateBusRaw, options: [], range: range, withTemplate: "")
+            .replacingOccurrences(of: "T", with: " ")
+        let dateBus = self.dateFormatter.date(from: cleanDateBus)
+        let deltaTime = dateBus?.timeIntervalSince(dateNow)
+        let busTimeInt = lround(deltaTime! / 60)
+        var busTimeStr = "In \(busTimeInt) "
+        if (busTimeInt > 1) {
+            busTimeStr += "minutes !"
+        }
+        else {
+            busTimeStr = "IMMEDIATE !"
+        }
+        if (!bp.is_real_time!) {
+            busTimeStr += " *"
+        }
+        var busDirection = "towards "
+        if (isAPromenadeBus(busPassage: bp)) {
+            busDirection += "Promenade"
+        }
+        else {
+            busDirection += "Nice Nord"
+        }
+        cell.textLabel?.text = busTimeStr
+        cell.detailTextLabel?.text = busDirection
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.client.busPassages.count
+    }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+//    {
+//        return 100.0;//Choose your custom row height
+//    }
     
     @IBAction func refreshWidget(_ sender: Any) {
         self.mainLabel.text = "Searching..."
@@ -33,40 +83,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func refreshLabel() {
-        var strResult = ""
-        let dateNow = Date()
-        
-        for bp in self.client.busPassages {
-            
-            let dateBusRaw = bp.bus_time!
-            
-            let regex = try! NSRegularExpression(pattern: "\\..*$", options: NSRegularExpression.Options.caseInsensitive)
-            let range = NSMakeRange(0, dateBusRaw.characters.count)
-            let cleanDateBus = regex.stringByReplacingMatches(in: dateBusRaw, options: [], range: range, withTemplate: "")
-                .replacingOccurrences(of: "T", with: " ")
-            let dateBus = self.dateFormatter.date(from: cleanDateBus)
-            let deltaTime = dateBus?.timeIntervalSince(dateNow)
-            let busTimeInt = lround(deltaTime! / 60)
-            var busTimeStr = "In \(busTimeInt) "
-            if (busTimeInt > 1) {
-                busTimeStr += "minutes !"
-            }
-            else {
-                busTimeStr = "IMMEDIATE !"
-            }
-            if (!bp.is_real_time!) {
-                busTimeStr += " *"
-            }
-            strResult += busTimeStr
-            if (isAPromenadeBus(busPassage: bp)) {
-                strResult += " (Promenade)"
-            }
-            else {
-                strResult += " (Nice Nord)"
-            }
-            strResult += "\n"
-        }
-        self.mainLabel.text = strResult
+        self.mainLabel.text = ""
+        self.tableView.reloadData()
     }
     
     func isAPromenadeBus(busPassage: BusPassage) -> Bool {
@@ -78,7 +96,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.preferredContentSize = maxSize
         }
         else {
-            self.preferredContentSize = CGSize(width: 0, height: 200)
+            self.preferredContentSize = CGSize(width: 0, height: 400)
         }
     }
     

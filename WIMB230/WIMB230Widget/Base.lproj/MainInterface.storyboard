@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,36 +18,34 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Searching..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="16" y="8" width="266" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="266" id="pLA-eM-SU6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Searching..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
+                                <rect key="frame" x="-64" y="-83" width="77" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnC-OZ-lLD">
-                                <rect key="frame" x="284" y="8" width="20" height="20"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T7E-NY-9Un">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="HJh-4F-U3l"/>
-                                    <constraint firstAttribute="width" constant="20" id="OoU-jq-FzE"/>
+                                    <constraint firstAttribute="height" constant="90" id="c0b-Sw-Hki"/>
                                 </constraints>
-                                <state key="normal" image="refresh"/>
                                 <connections>
-                                    <action selector="refreshWidget:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="zGX-SI-05a"/>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="NbK-NS-kbk"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="IC8-JS-7Ud"/>
-                            <constraint firstAttribute="trailing" secondItem="mnC-OZ-lLD" secondAttribute="trailing" constant="16" id="NHq-zW-lnc"/>
-                            <constraint firstItem="mnC-OZ-lLD" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="awp-Zc-I0y"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="vR8-Au-q2P"/>
+                            <constraint firstItem="T7E-NY-9Un" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="Jag-HZ-Wk1"/>
+                            <constraint firstAttribute="trailing" secondItem="T7E-NY-9Un" secondAttribute="trailing" id="UqR-jE-RBJ"/>
+                            <constraint firstItem="T7E-NY-9Un" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="VRk-EE-Nhh"/>
+                            <constraint firstItem="T7E-NY-9Un" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="Y3I-ZP-rMr"/>
+                            <constraint firstAttribute="trailing" secondItem="T7E-NY-9Un" secondAttribute="trailing" id="kgJ-Xc-xhG"/>
+                            <constraint firstItem="T7E-NY-9Un" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="lYt-Ng-QfX"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -56,17 +53,15 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="37"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="mainLabel" destination="GcN-lo-r42" id="80L-fi-at6"/>
+                        <outlet property="tableView" destination="T7E-NY-9Un" id="IuJ-Pn-LUm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123.75" y="77.640845070422543"/>
+            <point key="canvasLocation" x="84.375" y="55.985915492957744"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="refresh" width="29" height="29"/>
-    </resources>
 </document>

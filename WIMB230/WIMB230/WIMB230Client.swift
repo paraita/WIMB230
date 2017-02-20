@@ -21,26 +21,30 @@ class WIMB230Client {
     
     func fetchBusPassages(stopId: Int) {
         print("Fetching bus passages for stop \(stopId)")
-        Alamofire.request("https://whereismybus230.herokuapp.com/bus230",
-                          parameters:["stop_id": stopId])
-            .responseArray {
-                (response: DataResponse<[BusPassage]>) in
-                let busPassages = response.result.value
-                if let busPassages = busPassages {
-                    self.busPassages = busPassages
-                    print("Bus passages: [")
-                    for busPassage in self.busPassages {
-                        print(busPassage.bus_time!)
-                        print(busPassage.dest!)
-                        print(busPassage.is_real_time!)
-                    }
-                    print("]")
-                    if (self.busPassages.count == 0) {
-                        self.mockData()
-                    }
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchedData"), object: nil)
-                }
+        //        Alamofire.request("https://whereismybus230.herokuapp.com/bus230",
+        //                          parameters:["stop_id": stopId])
+        //            .responseArray {
+        //                (response: DataResponse<[BusPassage]>) in
+        //                let busPassages = response.result.value
+        //                if let busPassages = busPassages {
+        //                    self.busPassages = busPassages
+        //                    print("Bus passages: [")
+        //                    for busPassage in self.busPassages {
+        //                        print(busPassage.bus_time!)
+        //                        print(busPassage.dest!)
+        //                        print(busPassage.is_real_time!)
+        //                    }
+        //                    print("]")
+        //                    if (self.busPassages.count == 0) {
+        //                        self.mockData()
+        //                    }
+        //                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchedData"), object: nil)
+        //                }
+        //        }
+        if (self.busPassages.count == 0) {
+            self.mockData()
         }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchedData"), object: nil)
     }
     
     func mockData() {
