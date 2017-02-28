@@ -27,7 +27,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
                                                name: NSNotification.Name(rawValue: "fetchedData"),
                                                object: nil)
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        self.tableView.rowHeight = 22.0
+        self.tableView.rowHeight = 25
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,7 +44,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
         let busTimeInt = lround(deltaTime! / 60)
         var busTimeStr = "In \(busTimeInt) "
         if (busTimeInt > 1) {
-            busTimeStr += "minutes !"
+            busTimeStr += "mins"
         }
         else {
             busTimeStr = "IMMEDIATE !"
@@ -74,7 +74,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
 //    {
-//        return 100.0;//Choose your custom row height
+//        return 10.0;//Choose your custom row height
 //    }
     
     @IBAction func refreshWidget(_ sender: Any) {
@@ -96,7 +96,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
             self.preferredContentSize = maxSize
         }
         else {
-            self.preferredContentSize = CGSize(width: 0, height: 400)
+            let count = 100
+            self.preferredContentSize = CGSize(width: 0, height: count)
         }
     }
     

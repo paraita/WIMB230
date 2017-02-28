@@ -22,30 +22,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Searching..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="-64" y="-83" width="77" height="17"/>
+                                <rect key="frame" x="38" y="8" width="77" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T7E-NY-9Un">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                <rect key="frame" x="2" y="0.0" width="320" height="72"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="c0b-Sw-Hki"/>
+                                    <constraint firstAttribute="height" constant="72" id="5kR-z8-DQn"/>
                                 </constraints>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="M4Y-Lb-cyx" id="NbK-NS-kbk"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="T7E-NY-9Un" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="Jag-HZ-Wk1"/>
-                            <constraint firstAttribute="trailing" secondItem="T7E-NY-9Un" secondAttribute="trailing" id="UqR-jE-RBJ"/>
-                            <constraint firstItem="T7E-NY-9Un" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="VRk-EE-Nhh"/>
-                            <constraint firstItem="T7E-NY-9Un" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="Y3I-ZP-rMr"/>
-                            <constraint firstAttribute="trailing" secondItem="T7E-NY-9Un" secondAttribute="trailing" id="kgJ-Xc-xhG"/>
-                            <constraint firstItem="T7E-NY-9Un" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="lYt-Ng-QfX"/>
+                            <constraint firstItem="T7E-NY-9Un" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="2" id="INj-FB-NyT"/>
+                            <constraint firstAttribute="trailing" secondItem="T7E-NY-9Un" secondAttribute="trailing" constant="-2" id="gzA-74-sf9"/>
+                            <constraint firstItem="T7E-NY-9Un" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="py0-Eb-iOp"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -61,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84.375" y="55.985915492957744"/>
+            <point key="canvasLocation" x="-335.625" y="163.73239436619718"/>
         </scene>
     </scenes>
 </document>
