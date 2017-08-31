@@ -52,7 +52,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
         if (!bp.is_real_time!) {
             busTimeStr += " *"
         }
-        var busDirection = "towards "
+        //var busDirection = "towards "
+        var busDirection = ""
         if (isAPromenadeBus(busPassage: bp)) {
             busDirection += "Promenade"
         }

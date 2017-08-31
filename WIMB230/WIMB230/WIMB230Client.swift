@@ -50,31 +50,24 @@ class WIMB230Client {
     func mockData() {
         self.busPassages.removeAll()
         let dateNow = Date()
-        
-        let b1 = BusPassage(bus_time: "2017-01-29 17:15:01",
-                            dest: "Mocked Cathédrale Vielle-Ville",
-                            is_real_time: true)
-        let b2 = BusPassage(bus_time: "2017-01-29 17:22:02",
-                            dest: "Mocked Gambetta",
-                            is_real_time: true)
-        let b3 = BusPassage(bus_time: "2017-01-29 17:32:03",
-                            dest: "Mocked Cathédrale Vielle-Ville",
-                            is_real_time: false)
-        let b4 = BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(72)),
-                            dest: "Mocked Cathédrale Vielle-Ville",
-                            is_real_time: false)
-        let b5 = BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(120)),
-                            dest: "Mocked Gambetta",
-                            is_real_time: true)
-        let b6 = BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(431)),
-                            dest: "Mocked Cathédrale Vielle-Ville",
-                            is_real_time: false)
-        //self.busPassages.append(b1)
-        //self.busPassages.append(b2)
-        //self.busPassages.append(b3)
-        self.busPassages.append(b4)
-        self.busPassages.append(b5)
-        self.busPassages.append(b6)
+        self.busPassages.append(BusPassage(bus_time: "2017-01-29 17:15:01",
+                                           dest: "Mocked Cathédrale Vielle-Ville",
+                                           is_real_time: true))
+        self.busPassages.append(BusPassage(bus_time: "2017-01-29 17:22:02",
+                                           dest: "Mocked Gambetta",
+                                           is_real_time: true))
+        self.busPassages.append(BusPassage(bus_time: "2017-01-29 17:32:03",
+                                           dest: "Mocked Cathédrale Vielle-Ville",
+                                           is_real_time: false))
+        self.busPassages.append(BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(72)),
+                                           dest: "Mocked Cathédrale Vielle-Ville",
+                                           is_real_time: false))
+        self.busPassages.append(BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(120)),
+                                           dest: "Mocked Gambetta",
+                                           is_real_time: true))
+        self.busPassages.append(BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(431)),
+                                           dest: "Mocked Cathédrale Vielle-Ville",
+                                           is_real_time: false))
     }
     
     
