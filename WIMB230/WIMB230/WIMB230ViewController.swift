@@ -19,6 +19,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     let refresher = PullToRefresh()
     let dateFormatter = DateFormatter()
     let client = WIMB230Client()
+    let NICE_PROM = "Cathédrale-Vieille Ville"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +86,14 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
             busTimeStr += " *"
         }
         cell.textLabel!.text = busTimeStr
-        cell.detailTextLabel!.text = busPassage.dest
+        
+        if (busPassage.dest == NICE_PROM) {
+            cell.detailTextLabel!.text = "Nice Prom"
+        }
+        else {
+            cell.detailTextLabel!.text = "Nice Nord"
+        }
+        
     }
 }
 

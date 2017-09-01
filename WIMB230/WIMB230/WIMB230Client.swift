@@ -41,32 +41,23 @@ class WIMB230Client {
                             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchedData"), object: nil)
                         }
                 }
-        if (self.busPassages.count == 0) {
-            self.mockData()
-        }
+//        if (self.busPassages.count == 0) {
+//            self.mockData()
+//        }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "fetchedData"), object: nil)
     }
     
     func mockData() {
         self.busPassages.removeAll()
         let dateNow = Date()
-        self.busPassages.append(BusPassage(bus_time: "2017-01-29 17:15:01",
-                                           dest: "Mocked Cathédrale Vielle-Ville",
-                                           is_real_time: true))
-        self.busPassages.append(BusPassage(bus_time: "2017-01-29 17:22:02",
-                                           dest: "Mocked Gambetta",
-                                           is_real_time: true))
-        self.busPassages.append(BusPassage(bus_time: "2017-01-29 17:32:03",
-                                           dest: "Mocked Cathédrale Vielle-Ville",
-                                           is_real_time: false))
         self.busPassages.append(BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(72)),
-                                           dest: "Mocked Cathédrale Vielle-Ville",
+                                           dest: "Cathédrale-Vieille Ville",
                                            is_real_time: false))
         self.busPassages.append(BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(120)),
                                            dest: "Mocked Gambetta",
                                            is_real_time: true))
         self.busPassages.append(BusPassage(bus_time: self.dateFormatter.string(from: dateNow.addingTimeInterval(431)),
-                                           dest: "Mocked Cathédrale Vielle-Ville",
+                                           dest: "Cathédrale-Vieille Ville",
                                            is_real_time: false))
     }
     
