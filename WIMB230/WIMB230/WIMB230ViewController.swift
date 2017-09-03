@@ -44,7 +44,6 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func fetch() {
@@ -60,7 +59,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "PARATOI")
+        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "PARATOI")
         configureCell(cell, atIndex: indexPath.row)
         return cell
     }
@@ -94,6 +93,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.detailTextLabel!.text = "Nice Nord"
         }
         
+        // TODO cell style to "detail right"
     }
 }
 
