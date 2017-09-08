@@ -9,7 +9,7 @@
 import UIKit
 
 class SetBusStopViewController: UIViewController, UITextFieldDelegate {
-    
+
     @IBOutlet var stopId: UITextField!
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class SetBusStopViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func manualSaveStopId(_ sender: Any) {
         let defaults = UserDefaults.standard
         let stopId = Int(self.stopId.text!)
@@ -33,7 +33,7 @@ class SetBusStopViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //self.stopId.resignFirstResponder()
         return true

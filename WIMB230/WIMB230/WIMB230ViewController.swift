@@ -12,15 +12,15 @@ import AlamofireObjectMapper
 import PullToRefresh
 
 class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-    
+
     @IBOutlet weak var tableView: UITableView!
     let stopId = 1939
-    
+
     let refresher = PullToRefresh()
     let dateFormatter = DateFormatter()
     let client = WIMB230Client()
-    let NICE_PROM = "Cathédrale-Vieille Ville"
-    
+    let PROMTERMINUS = "Cathédrale-Vieille Ville"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.addPullToRefresh(PullToRefresh()) {
@@ -32,73 +32,77 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
                                                name: NSNotification.Name(rawValue: "fetchedData"),
                                                object: nil)
     }
-    
+
     func refreshTableView() {
         self.tableView.reloadData()
         self.tableView.endRefreshing(at: .top)
     }
-    
+
     deinit {
         self.tableView.removePullToRefresh(self.tableView.topPullToRefresh!)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     func fetch() {
         self.client.fetchBusPassages(stopId: Int(self.stopId))
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.client.busPassages.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "PARATOI")
-        configureCell(cell, atIndex: indexPath.row)
+        var cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "PARATOI")
+        cell = configureCell(cell, atIndex: indexPath.row)
         return cell
     }
-    
-    func configureCell(_ cell: UITableViewCell, atIndex index: Int) {
+
+    func configureCell(_ cell: UITableViewCell, atIndex index: Int) -> UITableViewCell {
         let busPassage = self.client.busPassages[index]
         let dateNow = Date()
-        let regex = try! NSRegularExpression(pattern: "\\..*$", options: NSRegularExpression.Options.caseInsensitive)
-        let range = NSMakeRange(0, busPassage.bus_time!.characters.count)
-        let cleanDateBus = regex.stringByReplacingMatches(in: busPassage.bus_time!, options: [], range: range, withTemplate: "")
+        guard let regex = try? NSRegularExpression(pattern: "\\..*$",
+                                               options: NSRegularExpression.Options.caseInsensitive)
+            else {
+                print("Creation of the regex failed !")
+                return cell
+            }
+        let range = NSRange(location: 0, length: busPassage.busTime!.characters.count)
+        let cleanDateBus = regex.stringByReplacingMatches(in: busPassage.busTime!,
+                                                      options: [],
+                                                      range: range,
+                                                      withTemplate: "")
             .replacingOccurrences(of: "T", with: " ")
         let dateBus = self.dateFormatter.date(from: cleanDateBus)
         let deltaTime = dateBus?.timeIntervalSince(dateNow)
         let busTimeInt = lround(deltaTime! / 60)
         var busTimeStr = "In \(busTimeInt) "
-        if (busTimeInt > 1) {
+        if busTimeInt > 1 {
             busTimeStr += "minutes !"
-        }
-        else {
+        } else {
             busTimeStr += "minute !!!"
         }
-        if (!busPassage.is_real_time!) {
+        if !busPassage.isRealTime! {
             busTimeStr += " *"
         }
-        cell.textLabel!.text = busTimeStr
-        
-        if (busPassage.dest == NICE_PROM) {
-            cell.detailTextLabel!.text = "Nice Prom"
+        cell.detailTextLabel!.text = busTimeStr
+        if busPassage.dest == PROMTERMINUS {
+            cell.textLabel!.text = "Nice Prom"
+        } else {
+            cell.textLabel!.text = "Nice Nord"
         }
-        else {
-            cell.detailTextLabel!.text = "Nice Nord"
-        }
-        
-        // TODO cell style to "detail right"
+        return cell
     }
 }
 
 private extension WIMB230ViewController {
-    
+
     // Binds the pull-to-refresh to our tableview
     func setupPullToRefresh() {
         tableView.addPullToRefresh(PullToRefresh()) { [weak self] in
@@ -109,4 +113,3 @@ private extension WIMB230ViewController {
         }
     }
 }
-

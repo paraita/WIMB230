@@ -10,21 +10,21 @@ import Foundation
 import ObjectMapper
 
 class BusPassage: Mappable {
-    var bus_time: String?
+    var busTime: String?
     var dest: String?
-    var is_real_time: Bool?
-    
-    required init?(map: Map){ }
-    
-    init(bus_time: String, dest: String, is_real_time: Bool) {
-        self.bus_time = bus_time;
-        self.dest = dest;
-        self.is_real_time = is_real_time;
+    var isRealTime: Bool?
+
+    required init? (map: Map) { }
+
+    init(busTime: String, dest: String, isRealTime: Bool) {
+        self.busTime = busTime
+        self.dest = dest
+        self.isRealTime = isRealTime
     }
-    
+
     func mapping(map: Map) {
-        bus_time <- map["bus_time"]
+        busTime <- map["bus_time"]
         dest <- map["dest"]
-        is_real_time <- map["is_real_time"]
+        isRealTime <- map["is_real_time"]
     }
 }
