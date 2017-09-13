@@ -34,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e0c-fm-9T1" id="0QI-8w-Vi9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -51,7 +51,7 @@
                                     <color key="titleColor" red="0.95575004019999998" green="1" blue="0.98273799269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1hI-0b-7j2" kind="presentation" id="aZW-rp-EAF"/>
+                                    <segue destination="1hI-0b-7j2" kind="presentation" identifier="save" id="aZW-rp-EAF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -86,23 +86,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set the bus stop id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-he-7dM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set the bus stop id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-he-7dM">
                                 <rect key="frame" x="86" y="28" width="149" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Wj-hRH">
-                                <rect key="frame" x="112" y="57" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.13490483164787292" green="0.52160686254501343" blue="0.67389404773712158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZV-Aw-MBW">
-                                <rect key="frame" x="120" y="94" width="81" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZV-Aw-MBW">
+                                <rect key="frame" x="145" y="95" width="30" height="30"/>
                                 <state key="normal" title="Set">
                                     <color key="titleColor" red="0.95575004019999998" green="1" blue="0.98273799269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -110,8 +101,28 @@
                                     <action selector="manualSaveStopId:" destination="1hI-0b-7j2" eventType="touchUpInside" id="dEw-my-pJd"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Wj-hRH">
+                                <rect key="frame" x="101" y="57" width="118" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="KDK-67-3B2"/>
+                                </constraints>
+                                <color key="textColor" red="0.13490483164787292" green="0.52160686254501343" blue="0.67389404773712158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.13154044749999999" green="0.52160465720000004" blue="0.67390024660000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lZV-Aw-MBW" firstAttribute="top" secondItem="O3l-Wj-hRH" secondAttribute="bottom" constant="8" symbolic="YES" id="70v-ee-IOx"/>
+                            <constraint firstItem="O3l-Wj-hRH" firstAttribute="top" secondItem="Ljp-he-7dM" secondAttribute="bottom" constant="8" symbolic="YES" id="ByA-sO-xWR"/>
+                            <constraint firstItem="Ljp-he-7dM" firstAttribute="top" secondItem="Fhe-Pu-tWL" secondAttribute="bottom" constant="8" id="Ent-HR-CUa"/>
+                            <constraint firstItem="lZV-Aw-MBW" firstAttribute="centerX" secondItem="Ljp-he-7dM" secondAttribute="centerX" id="TrQ-9t-z4p"/>
+                            <constraint firstItem="Ljp-he-7dM" firstAttribute="top" secondItem="Fhe-Pu-tWL" secondAttribute="bottom" constant="8" id="Uf2-uf-dZq"/>
+                            <constraint firstItem="O3l-Wj-hRH" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="amz-hp-0dl"/>
+                            <constraint firstItem="Ljp-he-7dM" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="ncy-pH-Fd2"/>
+                            <constraint firstItem="O3l-Wj-hRH" firstAttribute="centerX" secondItem="Ljp-he-7dM" secondAttribute="centerX" id="t20-io-Z29"/>
+                            <constraint firstItem="lZV-Aw-MBW" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="v9I-kV-bek"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="stopId" destination="O3l-Wj-hRH" id="B8f-8m-j8a"/>

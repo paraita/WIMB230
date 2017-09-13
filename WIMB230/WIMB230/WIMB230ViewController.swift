@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireObjectMapper
+
 import PullToRefresh
 
 class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
@@ -31,6 +32,14 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
                                                selector: #selector(refreshTableView),
                                                name: NSNotification.Name(rawValue: "fetchedData"),
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(triggerFetchofData),
+                                               name: NSNotification.Name(rawValue: "savedPreferences"),
+                                               object: nil)
+    }
+    
+    func triggerFetchofData() {
+        self.tableView.startRefreshing(at: .top)
     }
 
     func refreshTableView() {
