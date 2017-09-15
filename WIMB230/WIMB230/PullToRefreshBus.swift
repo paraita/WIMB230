@@ -58,6 +58,9 @@ class BusAnimator: NSObject, RefreshViewAnimator {
             refreshView.frontWheel.alpha = progress
         case .loading:
             print("loading in progress")
+            refreshView.bus.alpha = 1
+            refreshView.backWheel.alpha = 1
+            refreshView.frontWheel.alpha = 1
             UIView.animate(withDuration: 0.5, delay: 0.5, options: [.autoreverse, .repeat],
                            animations: {
                 let oldPosition = self.refreshView.bus.center

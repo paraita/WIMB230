@@ -31,10 +31,10 @@ class SetBusStopViewController: UIViewController, UITextFieldDelegate {
         defaults.setValue(stopId, forKey: "stopId")
         print("saveStopId !")
         self.view.endEditing(true)
-        let userInfo = ["stopId": stopId ?? 1939]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "savedPreferences"),
-                                        object: nil,
-                                        userInfo: userInfo)
+//        let userInfo = ["stopId": stopId ?? 1939]
+//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "savedPreferences"),
+//                                        object: nil,
+//                                        userInfo: userInfo)
         self.dismiss(animated: true, completion: nil)
     }
 

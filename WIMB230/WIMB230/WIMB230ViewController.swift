@@ -31,14 +31,10 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
                                                selector: #selector(refreshTableView),
                                                name: NSNotification.Name(rawValue: "fetchedData"),
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(triggerFetchofData),
-                                               name: NSNotification.Name(rawValue: "savedPreferences"),
-                                               object: nil)
-    }
-    
-    func triggerFetchofData() {
-        self.tableView.startRefreshing(at: .top)
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(fetch),
+//                                               name: NSNotification.Name(rawValue: "savedPreferences"),
+//                                               object: nil)
     }
 
     func refreshTableView() {
