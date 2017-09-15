@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,16 +28,6 @@
                                 <color key="sectionIndexColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PARAITA" id="e0c-fm-9T1">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e0c-fm-9T1" id="0QI-8w-Vi9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="lLJ-v6-Pfu"/>
@@ -46,7 +35,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiq-1J-Zxh">
-                                <rect key="frame" x="197" y="28" width="107" height="30"/>
+                                <rect key="frame" x="193" y="28" width="107" height="30"/>
                                 <state key="normal" title="Select bus stop">
                                     <color key="titleColor" red="0.95575004019999998" green="1" blue="0.98273799269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -57,13 +46,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.131540447473526" green="0.52160465717315674" blue="0.67390024662017822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kiq-1J-Zxh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ASd-9I-EbQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mWQ-hf-wA4" secondAttribute="bottom" id="HlX-vA-NLR"/>
-                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="top" secondItem="kiq-1J-Zxh" secondAttribute="bottom" constant="8" id="ZAq-DF-8Hc"/>
-                            <constraint firstItem="kiq-1J-Zxh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Zbf-Uw-uul"/>
-                            <constraint firstAttribute="trailing" secondItem="mWQ-hf-wA4" secondAttribute="trailing" id="fZL-qW-GiY"/>
-                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="flb-eG-5ay"/>
-                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l38-6p-j4d"/>
+                            <constraint firstAttribute="trailing" secondItem="mWQ-hf-wA4" secondAttribute="trailing" id="UdB-NA-znq"/>
+                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="top" secondItem="kiq-1J-Zxh" secondAttribute="bottom" constant="8" id="f4J-ls-8oE"/>
+                            <constraint firstItem="kiq-1J-Zxh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="m6f-7a-IXx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mWQ-hf-wA4" secondAttribute="bottom" id="nyF-iP-gis"/>
+                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sYu-EW-hI7"/>
+                            <constraint firstAttribute="trailing" secondItem="kiq-1J-Zxh" secondAttribute="trailing" constant="20" id="z3X-Uz-fXE"/>
                         </constraints>
                     </view>
                     <connections>
@@ -72,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16.875" y="101.40845070422536"/>
+            <point key="canvasLocation" x="15.942028985507248" y="101.08695652173914"/>
         </scene>
         <!--Set Bus Stop View Controller-->
         <scene sceneID="k7r-mI-WZA">
@@ -87,13 +75,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set the bus stop id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-he-7dM">
-                                <rect key="frame" x="86" y="28" width="149" height="21"/>
+                                <rect key="frame" x="85.5" y="28" width="149" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZV-Aw-MBW">
-                                <rect key="frame" x="145" y="95" width="30" height="30"/>
+                                <rect key="frame" x="144.5" y="95" width="30" height="30"/>
                                 <state key="normal" title="Set">
                                     <color key="titleColor" red="0.95575004019999998" green="1" blue="0.98273799269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -102,7 +90,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Wj-hRH">
-                                <rect key="frame" x="101" y="57" width="118" height="30"/>
+                                <rect key="frame" x="100.5" y="57" width="118" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="118" id="KDK-67-3B2"/>
                                 </constraints>

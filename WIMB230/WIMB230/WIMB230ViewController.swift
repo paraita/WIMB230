@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import AlamofireObjectMapper
-
 import PullToRefresh
 
 class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
@@ -17,14 +16,14 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     let stopId = 1939
 
-    let refresher = PullToRefresh()
+    let refresher = PullToRefreshBus(at: .top)
     let dateFormatter = DateFormatter()
     let client = WIMB230Client()
     let PROMTERMINUS = "Cathédrale-Vieille Ville"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.addPullToRefresh(PullToRefresh()) {
+        self.tableView.addPullToRefresh(refresher) {
             self.fetch()
         }
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"

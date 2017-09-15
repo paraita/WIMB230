@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ED0B995F1F69106A00C02A5A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B681F690A5700EC4C79 /* Alamofire.framework */; };
+		ED09DD4C1F6A9B3100FBC284 /* BusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED09DD4B1F6A9B3100FBC284 /* BusView.xib */; };
+		ED09DD4E1F6A9C4600FBC284 /* PullToRefreshBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED09DD4D1F6A9C4600FBC284 /* PullToRefreshBus.swift */; };
 		ED0B99601F69106A00C02A5A /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B681F690A5700EC4C79 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED0B99611F69106A00C02A5A /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B691F690A5700EC4C79 /* AlamofireObjectMapper.framework */; };
 		ED0B99621F69106A00C02A5A /* AlamofireObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B691F690A5700EC4C79 /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ED0B99631F69106A00C02A5A /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B6A1F690A5700EC4C79 /* ObjectMapper.framework */; };
 		ED0B99641F69106A00C02A5A /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B6A1F690A5700EC4C79 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED0B99651F69106A00C02A5A /* PullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B6B1F690A5700EC4C79 /* PullToRefresh.framework */; };
 		ED0B99661F69106A00C02A5A /* PullToRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B6B1F690A5700EC4C79 /* PullToRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -23,9 +23,7 @@
 		ED342AAE1E3FCD1300D8D212 /* WIMB230Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342AAD1E3FCD1300D8D212 /* WIMB230Tests.swift */; };
 		ED342ACC1E3FD7C500D8D212 /* BusPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342ACB1E3FD7C500D8D212 /* BusPassage.swift */; };
 		ED635B6C1F690A5700EC4C79 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B681F690A5700EC4C79 /* Alamofire.framework */; };
-		ED635B6D1F690A5700EC4C79 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B691F690A5700EC4C79 /* AlamofireObjectMapper.framework */; };
 		ED635B6E1F690A5700EC4C79 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B6A1F690A5700EC4C79 /* ObjectMapper.framework */; };
-		ED635B6F1F690A5700EC4C79 /* PullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED635B6B1F690A5700EC4C79 /* PullToRefresh.framework */; };
 		ED7129B21EEF30550023A048 /* SetBusStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7129B11EEF30550023A048 /* SetBusStopViewController.swift */; };
 		EDB19A8E1E539A3F0044C933 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB19A8D1E539A3F0044C933 /* TodayViewController.swift */; };
 		EDB19A911E539A3F0044C933 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB19A8F1E539A3F0044C933 /* MainInterface.storyboard */; };
@@ -82,6 +80,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED09DD4B1F6A9B3100FBC284 /* BusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusView.xib; sourceTree = "<group>"; };
+		ED09DD4D1F6A9C4600FBC284 /* PullToRefreshBus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshBus.swift; sourceTree = "<group>"; };
 		ED342A951E3FCD1200D8D212 /* WIMB230.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMB230.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED342A981E3FCD1200D8D212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED342A9A1E3FCD1200D8D212 /* WIMB230ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIMB230ViewController.swift; sourceTree = "<group>"; };
@@ -114,10 +114,6 @@
 				ED0B99611F69106A00C02A5A /* AlamofireObjectMapper.framework in Frameworks */,
 				ED0B99651F69106A00C02A5A /* PullToRefresh.framework in Frameworks */,
 				ED635B6C1F690A5700EC4C79 /* Alamofire.framework in Frameworks */,
-				ED635B6F1F690A5700EC4C79 /* PullToRefresh.framework in Frameworks */,
-				ED0B995F1F69106A00C02A5A /* Alamofire.framework in Frameworks */,
-				ED635B6D1F690A5700EC4C79 /* AlamofireObjectMapper.framework in Frameworks */,
-				ED0B99631F69106A00C02A5A /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +171,8 @@
 				ED342AA11E3FCD1200D8D212 /* LaunchScreen.storyboard */,
 				ED342AA41E3FCD1200D8D212 /* Info.plist */,
 				ED7129B11EEF30550023A048 /* SetBusStopViewController.swift */,
+				ED09DD4B1F6A9B3100FBC284 /* BusView.xib */,
+				ED09DD4D1F6A9C4600FBC284 /* PullToRefreshBus.swift */,
 			);
 			path = WIMB230;
 			sourceTree = "<group>";
@@ -270,7 +268,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Paraita;
 				TargetAttributes = {
 					ED342A941E3FCD1200D8D212 = {
@@ -317,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED342AA31E3FCD1200D8D212 /* LaunchScreen.storyboard in Resources */,
+				ED09DD4C1F6A9B3100FBC284 /* BusView.xib in Resources */,
 				ED342AA01E3FCD1200D8D212 /* Assets.xcassets in Resources */,
 				ED342A9E1E3FCD1200D8D212 /* Main.storyboard in Resources */,
 			);
@@ -348,6 +347,7 @@
 				ED7129B21EEF30550023A048 /* SetBusStopViewController.swift in Sources */,
 				ED342A9B1E3FCD1200D8D212 /* WIMB230ViewController.swift in Sources */,
 				EDB19AA21E539ABD0044C933 /* WIMB230Client.swift in Sources */,
+				ED09DD4E1F6A9C4600FBC284 /* PullToRefreshBus.swift in Sources */,
 				ED342ACC1E3FD7C500D8D212 /* BusPassage.swift in Sources */,
 				ED342A991E3FCD1200D8D212 /* AppDelegate.swift in Sources */,
 			);

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="redraw" id="iN0-l3-epB" customClass="BusView" customModule="WIMB230" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="328" height="98"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bus" translatesAutoresizingMaskIntoConstraints="NO" id="JZL-9D-gq0">
+                    <rect key="frame" x="44" y="0.0" width="240" height="97"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wheel1" translatesAutoresizingMaskIntoConstraints="NO" id="tF0-VV-Lly">
+                    <rect key="frame" x="89" y="61" width="27" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wheel2" translatesAutoresizingMaskIntoConstraints="NO" id="6aP-h3-zOo">
+                    <rect key="frame" x="199" y="61" width="27" height="27"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="backWheel" destination="tF0-VV-Lly" id="VsO-CQ-X3H"/>
+                <outlet property="bus" destination="JZL-9D-gq0" id="Icc-om-aW5"/>
+                <outlet property="frontWheel" destination="6aP-h3-zOo" id="Il7-zL-SlN"/>
+            </connections>
+            <point key="canvasLocation" x="-777" y="303"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bus" width="952" height="416"/>
+        <image name="wheel1" width="80" height="80"/>
+        <image name="wheel2" width="80" height="80"/>
+    </resources>
+</document>
