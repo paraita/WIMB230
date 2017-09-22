@@ -89,7 +89,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDataS
         self.client.fetchBusPassages(stopId: 1939)
     }
 
-    func refreshLabel() {
+    @objc func refreshLabel() -> Void {
         self.mainLabel.text = ""
         self.tableView.reloadData()
     }

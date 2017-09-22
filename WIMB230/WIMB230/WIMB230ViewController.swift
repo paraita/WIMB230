@@ -37,7 +37,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
 //                                               object: nil)
     }
 
-    func refreshTableView() {
+    @objc func refreshTableView() -> Void {
         self.tableView.reloadData()
         self.tableView.endRefreshing(at: .top)
     }

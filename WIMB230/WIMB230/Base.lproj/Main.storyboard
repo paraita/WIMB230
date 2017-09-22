@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,11 +29,11 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexTrackingBackgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3Ky-OV-NWn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TITOI" id="3Ky-OV-NWn">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Ky-OV-NWn" id="YHH-ry-eho">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -44,7 +45,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiq-1J-Zxh">
-                                <rect key="frame" x="193" y="28" width="107" height="30"/>
+                                <rect key="frame" x="197" y="28" width="107" height="30"/>
                                 <state key="normal" title="Select bus stop">
                                     <color key="titleColor" red="0.95575004019999998" green="1" blue="0.98273799269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -55,12 +56,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.131540447473526" green="0.52160465717315674" blue="0.67390024662017822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="mWQ-hf-wA4" secondAttribute="trailing" id="UdB-NA-znq"/>
-                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="top" secondItem="kiq-1J-Zxh" secondAttribute="bottom" constant="8" id="f4J-ls-8oE"/>
-                            <constraint firstItem="kiq-1J-Zxh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="m6f-7a-IXx"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mWQ-hf-wA4" secondAttribute="bottom" id="nyF-iP-gis"/>
-                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sYu-EW-hI7"/>
-                            <constraint firstAttribute="trailing" secondItem="kiq-1J-Zxh" secondAttribute="trailing" constant="20" id="z3X-Uz-fXE"/>
+                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="top" secondItem="kiq-1J-Zxh" secondAttribute="bottom" constant="8" id="BHp-e4-eAy"/>
+                            <constraint firstAttribute="trailing" secondItem="mWQ-hf-wA4" secondAttribute="trailing" id="KfB-QY-9Lh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mWQ-hf-wA4" secondAttribute="bottom" id="NcC-ey-6Ot"/>
+                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="top" secondItem="kiq-1J-Zxh" secondAttribute="bottom" constant="8" id="O8o-gy-XRb"/>
+                            <constraint firstItem="mWQ-hf-wA4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dyE-4d-hPq"/>
+                            <constraint firstItem="kiq-1J-Zxh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nhT-Be-bWf"/>
+                            <constraint firstItem="kiq-1J-Zxh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="tfS-x8-3kb"/>
                         </constraints>
                     </view>
                     <connections>
