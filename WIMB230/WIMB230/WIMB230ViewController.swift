@@ -96,7 +96,10 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         if busTimeInt > 1 {
             busTimeStr += "minutes !"
         } else {
-            busTimeStr += "minute !!!"
+            busTimeStr += "minute !!"
+        }
+        if busTimeInt == 0 {
+            busTimeStr = "Immediate !!!"
         }
         // TODO remove this once I have the real image for the realTime badge
         if !busPassage.isRealTime! {
@@ -107,17 +110,15 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.busTimeLeft.text = busTimeStr
         if busTimeInt < 5 {
             cell.busTimeLeft.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-        }
-        if busTimeInt < 10 {
+        } else if busTimeInt < 10 {
             cell.busTimeLeft.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-        }
-        if busTimeInt > 10 {
+        } else if busTimeInt > 10 {
             cell.busTimeLeft.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         }
         cell.busTimeLeft.layer.masksToBounds = true
         cell.busTimeLeft.layer.cornerRadius = 8
         if busPassage.dest == PROMTERMINUS {
-            cell.busType.text = "Nice Prom"
+            cell.busType.text = "Promenade"
         } else {
             cell.busType.text = "Nice Nord"
         }

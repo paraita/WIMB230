@@ -49,10 +49,10 @@ class WIMB230Client {
         self.busPassages.append(BusPassage(busTime: self.dateFormatter.string(from: dateNow.addingTimeInterval(72)),
                                            dest: "Cathédrale-Vieille Ville",
                                            isRealTime: false))
-        self.busPassages.append(BusPassage(busTime: self.dateFormatter.string(from: dateNow.addingTimeInterval(120)),
+        self.busPassages.append(BusPassage(busTime: self.dateFormatter.string(from: dateNow.addingTimeInterval(431)),
                                            dest: "Mocked Gambetta",
                                            isRealTime: true))
-        self.busPassages.append(BusPassage(busTime: self.dateFormatter.string(from: dateNow.addingTimeInterval(431)),
+        self.busPassages.append(BusPassage(busTime: self.dateFormatter.string(from: dateNow.addingTimeInterval(731)),
                                            dest: "Cathédrale-Vieille Ville",
                                            isRealTime: false))
     }
