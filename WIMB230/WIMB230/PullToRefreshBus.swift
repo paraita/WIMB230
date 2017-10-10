@@ -13,9 +13,14 @@ import PullToRefresh
 open class PullToRefreshBus: PullToRefresh {
 
     public convenience init(at position: Position = .top) {
-        let refreshView = Bundle(for: type(of: self)).loadNibNamed("BusView", owner: nil, options: nil)!.first as! BusView
-        let animator =  BusAnimator(refreshView: refreshView)
-        self.init(refreshView: refreshView, animator: animator, height : refreshView.frame.size.height, position : position)
+        let refreshView = Bundle(for: type(of: self))
+            .loadNibNamed("BusView", owner: nil, options: nil)!
+            .first as? BusView
+        let animator =  BusAnimator(refreshView: refreshView!)
+        self.init(refreshView: refreshView!,
+                  animator: animator,
+                  height : refreshView!.frame.size.height,
+                  position : position)
     }
 }
 
@@ -66,8 +71,10 @@ class BusAnimator: NSObject, RefreshViewAnimator {
                 let oldPosition = self.refreshView.bus.center
                 self.refreshView.bus.center = CGPoint(x: oldPosition.x,
                                                   y: oldPosition.y-2)
-                self.refreshView.backWheel.transform = self.refreshView.backWheel.transform.rotated(by: CGFloat(Double.pi / 2))
-                self.refreshView.frontWheel.transform = self.refreshView.frontWheel.transform.rotated(by: CGFloat(Double.pi / 2))
+                self.refreshView.backWheel.transform = self.refreshView
+                    .backWheel.transform.rotated(by: CGFloat(Double.pi / 2))
+                self.refreshView.frontWheel.transform = self.refreshView
+                    .frontWheel.transform.rotated(by: CGFloat(Double.pi / 2))
             })
         case .finished:
             print("finished state")

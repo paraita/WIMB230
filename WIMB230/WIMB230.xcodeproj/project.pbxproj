@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED09DD4C1F6A9B3100FBC284 /* BusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED09DD4B1F6A9B3100FBC284 /* BusView.xib */; };
 		ED09DD4E1F6A9C4600FBC284 /* PullToRefreshBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED09DD4D1F6A9C4600FBC284 /* PullToRefreshBus.swift */; };
+		ED19E2C61F7EEB7E005289E5 /* PassageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19E2C51F7EEB7E005289E5 /* PassageCell.swift */; };
 		ED342A991E3FCD1200D8D212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342A981E3FCD1200D8D212 /* AppDelegate.swift */; };
 		ED342A9B1E3FCD1200D8D212 /* WIMB230ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342A9A1E3FCD1200D8D212 /* WIMB230ViewController.swift */; };
 		ED342A9E1E3FCD1200D8D212 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED342A9C1E3FCD1200D8D212 /* Main.storyboard */; };
@@ -86,6 +87,7 @@
 /* Begin PBXFileReference section */
 		ED09DD4B1F6A9B3100FBC284 /* BusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusView.xib; sourceTree = "<group>"; };
 		ED09DD4D1F6A9C4600FBC284 /* PullToRefreshBus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshBus.swift; sourceTree = "<group>"; };
+		ED19E2C51F7EEB7E005289E5 /* PassageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageCell.swift; sourceTree = "<group>"; };
 		ED342A951E3FCD1200D8D212 /* WIMB230.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMB230.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED342A981E3FCD1200D8D212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED342A9A1E3FCD1200D8D212 /* WIMB230ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIMB230ViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				ED7129B11EEF30550023A048 /* SetBusStopViewController.swift */,
 				ED09DD4B1F6A9B3100FBC284 /* BusView.xib */,
 				ED09DD4D1F6A9C4600FBC284 /* PullToRefreshBus.swift */,
+				ED19E2C51F7EEB7E005289E5 /* PassageCell.swift */,
 			);
 			path = WIMB230;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				ED342A931E3FCD1200D8D212 /* Resources */,
 				EDB19A951E539A3F0044C933 /* Embed App Extensions */,
 				ED0B99671F69106A00C02A5A /* Embed Frameworks */,
+				ED1D91D31F7C2BB700D97865 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -350,6 +354,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ED1D91D31F7C2BB700D97865 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED342A911E3FCD1200D8D212 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -357,6 +377,7 @@
 			files = (
 				ED7129B21EEF30550023A048 /* SetBusStopViewController.swift in Sources */,
 				ED342A9B1E3FCD1200D8D212 /* WIMB230ViewController.swift in Sources */,
+				ED19E2C61F7EEB7E005289E5 /* PassageCell.swift in Sources */,
 				EDB19AA21E539ABD0044C933 /* WIMB230Client.swift in Sources */,
 				ED09DD4E1F6A9C4600FBC284 /* PullToRefreshBus.swift in Sources */,
 				ED342ACC1E3FD7C500D8D212 /* BusPassage.swift in Sources */,

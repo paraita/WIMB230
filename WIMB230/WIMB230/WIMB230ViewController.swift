@@ -26,7 +26,6 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.addPullToRefresh(refresher) {
             self.fetch()
         }
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(refreshTableView),
                                                name: NSNotification.Name(rawValue: "fetchedData"),
@@ -37,7 +36,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
 //                                               object: nil)
     }
 
-    @objc func refreshTableView() -> Void {
+    @objc func refreshTableView() {
         self.tableView.reloadData()
         self.tableView.endRefreshing(at: .top)
     }
@@ -63,12 +62,18 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "PARATOI")
-        cell = configureCell(cell, atIndex: indexPath.row)
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TITOI", for: indexPath)
+        if var customCell = cell as? PassageCell {
+            customCell = configureCell(customCell, atIndex: indexPath.row)
+            return customCell
+        } else {
+            print("Shit happened when configuring the passage cell")
+            cell.textLabel?.text = "Nope"
+            return cell
+        }
     }
 
-    func configureCell(_ cell: UITableViewCell, atIndex index: Int) -> UITableViewCell {
+    func configureCell(_ cell: PassageCell, atIndex index: Int) -> PassageCell {
         let busPassage = self.client.busPassages[index]
         let dateNow = Date()
         guard let regex = try? NSRegularExpression(pattern: "\\..*$",
@@ -83,23 +88,41 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
                                                       range: range,
                                                       withTemplate: "")
             .replacingOccurrences(of: "T", with: " ")
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let dateBus = self.dateFormatter.date(from: cleanDateBus)
         let deltaTime = dateBus?.timeIntervalSince(dateNow)
         let busTimeInt = lround(deltaTime! / 60)
-        var busTimeStr = "In \(busTimeInt) "
+        var busTimeStr = "-\(busTimeInt) "
         if busTimeInt > 1 {
             busTimeStr += "minutes !"
         } else {
             busTimeStr += "minute !!!"
         }
+        // TODO remove this once I have the real image for the realTime badge
         if !busPassage.isRealTime! {
             busTimeStr += " *"
         }
-        cell.detailTextLabel!.text = busTimeStr
+        dateFormatter.dateFormat = "HH:mm"
+        cell.busTime.text = dateFormatter.string(from: dateBus!)
+        cell.busTimeLeft.text = busTimeStr
+        if busTimeInt < 5 {
+            cell.busTimeLeft.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        }
+        if busTimeInt < 10 {
+            cell.busTimeLeft.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        }
+        if busTimeInt > 10 {
+            cell.busTimeLeft.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        }
+        cell.busTimeLeft.layer.masksToBounds = true
+        cell.busTimeLeft.layer.cornerRadius = 8
         if busPassage.dest == PROMTERMINUS {
-            cell.textLabel!.text = "Nice Prom"
+            cell.busType.text = "Nice Prom"
         } else {
-            cell.textLabel!.text = "Nice Nord"
+            cell.busType.text = "Nice Nord"
+        }
+        if busPassage.isRealTime ?? false {
+            cell.realTimeBadge.image = #imageLiteral(resourceName: "wheel2")
         }
         return cell
     }
