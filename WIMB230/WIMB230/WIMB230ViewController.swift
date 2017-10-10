@@ -75,24 +75,58 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func configureCell(_ cell: PassageCell, atIndex index: Int) -> PassageCell {
         let busPassage = self.client.busPassages[index]
-        let dateNow = Date()
+
+        // busTime
+        let busDate = getBusDate(rawBusTime: busPassage.busTime!)
+        dateFormatter.dateFormat = "HH:mm"
+        cell.busTime.text = dateFormatter.string(from: busDate)
+
+        // busTimeLeft
+        let busTimeLeft = getBusTimeLeft(busDate: busDate)
+        cell.busTimeLeft.text = busTimeLeft.stringRep
+        cell.busTimeLeft.backgroundColor = busTimeLeft.colorRep
+        cell.busTimeLeft.layer.masksToBounds = true
+        cell.busTimeLeft.layer.cornerRadius = 8
+
+        // busType
+        cell.busType.text = getBusType(busDestination: busPassage.dest!)
+
+        // TODO: put a proper image
+        if busPassage.isRealTime ?? false {
+            cell.realTimeBadge.image = #imageLiteral(resourceName: "wheel2")
+        }
+        return cell
+    }
+
+    func getBusDate(rawBusTime: String) -> Date {
         guard let regex = try? NSRegularExpression(pattern: "\\..*$",
-                                               options: NSRegularExpression.Options.caseInsensitive)
+                                                   options: NSRegularExpression.Options.caseInsensitive)
             else {
                 print("Creation of the regex failed !")
-                return cell
-            }
-        let range = NSRange(location: 0, length: busPassage.busTime!.characters.count)
-        let cleanDateBus = regex.stringByReplacingMatches(in: busPassage.busTime!,
-                                                      options: [],
-                                                      range: range,
-                                                      withTemplate: "")
+                return Date()
+        }
+        let range = NSRange(location: 0, length: rawBusTime.characters.count)
+        let cleanDateBus = regex.stringByReplacingMatches(in: rawBusTime,
+                                                          options: [],
+                                                          range: range,
+                                                          withTemplate: "")
             .replacingOccurrences(of: "T", with: " ")
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let dateBus = self.dateFormatter.date(from: cleanDateBus)
-        let deltaTime = dateBus?.timeIntervalSince(dateNow)
-        let busTimeInt = lround(deltaTime! / 60)
+        if let dateBus = self.dateFormatter.date(from: cleanDateBus) {
+            return dateBus
+        } else {
+            print("Parsing of the date [\(cleanDateBus)] failed !")
+            return Date()
+        }
+    }
+    
+    func getBusTimeLeft(busDate: Date) -> (stringRep: String, intRep: Int, colorRep: UIColor) {
+        let dateNow = Date()
+        let deltaTime = busDate.timeIntervalSince(dateNow)
+        let busTimeInt = lround(deltaTime / 60)
         var busTimeStr = "-\(busTimeInt) "
+        var timeLeftColor: UIColor
+
         if busTimeInt > 1 {
             busTimeStr += "minutes !"
         } else {
@@ -101,31 +135,24 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         if busTimeInt == 0 {
             busTimeStr = "Immediate !!!"
         }
-        // TODO remove this once I have the real image for the realTime badge
-        if !busPassage.isRealTime! {
-            busTimeStr += " *"
-        }
-        dateFormatter.dateFormat = "HH:mm"
-        cell.busTime.text = dateFormatter.string(from: dateBus!)
-        cell.busTimeLeft.text = busTimeStr
+
         if busTimeInt < 5 {
-            cell.busTimeLeft.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            timeLeftColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         } else if busTimeInt < 10 {
-            cell.busTimeLeft.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-        } else if busTimeInt > 10 {
-            cell.busTimeLeft.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-        }
-        cell.busTimeLeft.layer.masksToBounds = true
-        cell.busTimeLeft.layer.cornerRadius = 8
-        if busPassage.dest == PROMTERMINUS {
-            cell.busType.text = "Promenade"
+            timeLeftColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         } else {
-            cell.busType.text = "Nice Nord"
+            timeLeftColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         }
-        if busPassage.isRealTime ?? false {
-            cell.realTimeBadge.image = #imageLiteral(resourceName: "wheel2")
+
+        return (busTimeStr, busTimeInt, timeLeftColor)
+    }
+    
+    func getBusType(busDestination: String) -> String {
+        if busDestination == PROMTERMINUS {
+            return "Promenade"
+        } else {
+            return "Nice Nord"
         }
-        return cell
     }
 }
 
