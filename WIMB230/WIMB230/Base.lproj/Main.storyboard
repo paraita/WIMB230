@@ -147,8 +147,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Wj-hRH">
+                                <rect key="frame" x="100.5" y="57" width="118" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="118" id="Rf4-85-Eg8"/>
+                                </constraints>
+                                <color key="textColor" red="0.13490483164787292" green="0.52160686254501343" blue="0.67389404773712158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dev mode:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWG-uN-3f8">
+                                <rect key="frame" x="118" y="95" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vVR-6Y-7ag">
+                                <rect key="frame" x="136" y="124" width="51" height="31"/>
+                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZV-Aw-MBW">
-                                <rect key="frame" x="144.5" y="95" width="30" height="30"/>
+                                <rect key="frame" x="145" y="163" width="30" height="30"/>
                                 <state key="normal" title="Set">
                                     <color key="titleColor" red="0.95575004019999998" green="1" blue="0.98273799269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -156,30 +174,23 @@
                                     <action selector="manualSaveStopId:" destination="1hI-0b-7j2" eventType="touchUpInside" id="dEw-my-pJd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Wj-hRH">
-                                <rect key="frame" x="100.5" y="57" width="118" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="118" id="KDK-67-3B2"/>
-                                </constraints>
-                                <color key="textColor" red="0.13490483164787292" green="0.52160686254501343" blue="0.67389404773712158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.13154044749999999" green="0.52160465720000004" blue="0.67390024660000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lZV-Aw-MBW" firstAttribute="top" secondItem="O3l-Wj-hRH" secondAttribute="bottom" constant="8" symbolic="YES" id="70v-ee-IOx"/>
-                            <constraint firstItem="O3l-Wj-hRH" firstAttribute="top" secondItem="Ljp-he-7dM" secondAttribute="bottom" constant="8" symbolic="YES" id="ByA-sO-xWR"/>
-                            <constraint firstItem="Ljp-he-7dM" firstAttribute="top" secondItem="Fhe-Pu-tWL" secondAttribute="bottom" constant="8" id="Ent-HR-CUa"/>
-                            <constraint firstItem="lZV-Aw-MBW" firstAttribute="centerX" secondItem="Ljp-he-7dM" secondAttribute="centerX" id="TrQ-9t-z4p"/>
-                            <constraint firstItem="Ljp-he-7dM" firstAttribute="top" secondItem="Fhe-Pu-tWL" secondAttribute="bottom" constant="8" id="Uf2-uf-dZq"/>
-                            <constraint firstItem="O3l-Wj-hRH" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="amz-hp-0dl"/>
-                            <constraint firstItem="Ljp-he-7dM" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="ncy-pH-Fd2"/>
-                            <constraint firstItem="O3l-Wj-hRH" firstAttribute="centerX" secondItem="Ljp-he-7dM" secondAttribute="centerX" id="t20-io-Z29"/>
-                            <constraint firstItem="lZV-Aw-MBW" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="v9I-kV-bek"/>
+                            <constraint firstItem="lZV-Aw-MBW" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="9xv-Aq-3we"/>
+                            <constraint firstItem="vVR-6Y-7ag" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="E4e-sg-ioY"/>
+                            <constraint firstItem="NWG-uN-3f8" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="FhG-E9-qmu"/>
+                            <constraint firstItem="O3l-Wj-hRH" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="Ppn-bm-wsL"/>
+                            <constraint firstItem="NWG-uN-3f8" firstAttribute="top" secondItem="O3l-Wj-hRH" secondAttribute="bottom" constant="8" id="V4W-V5-I8r"/>
+                            <constraint firstItem="vVR-6Y-7ag" firstAttribute="top" secondItem="NWG-uN-3f8" secondAttribute="bottom" constant="8" id="W6z-pI-dK5"/>
+                            <constraint firstItem="Ljp-he-7dM" firstAttribute="centerX" secondItem="Zh1-eF-2ey" secondAttribute="centerX" id="dnB-3y-92x"/>
+                            <constraint firstItem="lZV-Aw-MBW" firstAttribute="top" secondItem="vVR-6Y-7ag" secondAttribute="bottom" constant="8" id="g6h-ft-Ych"/>
+                            <constraint firstItem="Ljp-he-7dM" firstAttribute="top" secondItem="Fhe-Pu-tWL" secondAttribute="bottom" constant="8" id="hpw-8o-eOx"/>
+                            <constraint firstItem="O3l-Wj-hRH" firstAttribute="top" secondItem="Ljp-he-7dM" secondAttribute="bottom" constant="8" id="tUO-XS-ktf"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="devMode" destination="vVR-6Y-7ag" id="TVT-Rb-0Rn"/>
                         <outlet property="stopId" destination="O3l-Wj-hRH" id="B8f-8m-j8a"/>
                     </connections>
                 </viewController>

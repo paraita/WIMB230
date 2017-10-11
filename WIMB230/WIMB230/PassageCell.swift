@@ -18,7 +18,7 @@ class PassageCell: UITableViewCell {
 
     override func layoutSubviews() {
         self.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.contentView.layer.backgroundColor = #colorLiteral(red: 0.1208815202, green: 0.4670513272, blue: 0.6058638692, alpha: 1)
+        self.contentView.layer.backgroundColor = #colorLiteral(red: 0.1349048316, green: 0.5216068625, blue: 0.6738940477, alpha: 1)
         self.contentView.layer.masksToBounds = true
         self.contentView.layer.cornerRadius = 10
         self.contentView.layer.borderWidth = 5

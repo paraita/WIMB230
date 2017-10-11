@@ -11,13 +11,28 @@ import UIKit
 class SetBusStopViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var stopId: UITextField!
-
+    @IBOutlet var devMode: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let defaults = UserDefaults.standard
+        if let stopIdStr = defaults.string(forKey: "stopId") {
+            self.stopId.text = stopIdStr
+        } else {
+            self.stopId.text = String(1939)
+        }
+        if let debugModeOn = defaults.object(forKey: "debugModeOn") as? Bool {
+            if debugModeOn {
+                self.devMode.setOn(true, animated: true)
+            } else {
+                self.devMode.setOn(false, animated: true)
+            }
+        } else {
+            self.devMode.setOn(false, animated: true)
+        }
         stopId.keyboardType = UIKeyboardType.decimalPad
-        //stopId.reloadInputViews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,18 +43,15 @@ class SetBusStopViewController: UIViewController, UITextFieldDelegate {
     @IBAction func manualSaveStopId(_ sender: Any) {
         let defaults = UserDefaults.standard
         let stopId = Int(self.stopId.text!)
+        let debugModeOn = self.devMode.isOn
         defaults.setValue(stopId, forKey: "stopId")
-        print("saveStopId !")
+        defaults.setValue(debugModeOn, forKey: "debugModeOn")
+        print("Saving the user defaults")
         self.view.endEditing(true)
-//        let userInfo = ["stopId": stopId ?? 1939]
-//        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "savedPreferences"),
-//                                        object: nil,
-//                                        userInfo: userInfo)
         self.dismiss(animated: true, completion: nil)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //self.stopId.resignFirstResponder()
         return true
     }
 

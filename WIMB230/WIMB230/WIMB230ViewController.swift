@@ -14,7 +14,6 @@ import PullToRefresh
 class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    let stopId = 1939
 
     let refresher = PullToRefreshBus(at: .top)
     let dateFormatter = DateFormatter()
@@ -46,7 +45,8 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func fetch() {
-        self.client.fetchBusPassages(stopId: Int(self.stopId))
+        let stopId = UserDefaults.standard.integer(forKey: "stopId")
+        self.client.fetchBusPassages(stopId: stopId)
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,6 +91,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         if busPassage.isRealTime ?? false {
             cell.realTimeBadge.image = #imageLiteral(resourceName: "wheel2")
         }
+        cell.selectionStyle = .none
         return cell
     }
 
