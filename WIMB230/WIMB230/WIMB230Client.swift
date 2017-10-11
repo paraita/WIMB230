@@ -25,7 +25,6 @@ class WIMB230Client {
                           parameters:["stop_id": stopId])
             .responseArray { (response: DataResponse<[BusPassage]>) in
                 let busPassages = response.result.value
-                //sleep(2)
                 if let busPassages = busPassages {
                     self.busPassages = busPassages
                     print("Bus passages: [")

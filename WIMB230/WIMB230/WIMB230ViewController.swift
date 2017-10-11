@@ -30,10 +30,6 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
                                                selector: #selector(refreshTableView),
                                                name: NSNotification.Name(rawValue: "fetchedData"),
                                                object: nil)
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(fetch),
-//                                               name: NSNotification.Name(rawValue: "savedPreferences"),
-//                                               object: nil)
     }
 
     @objc func refreshTableView() {
@@ -119,8 +115,8 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
             return Date()
         }
     }
-    
-    func getBusTimeLeft(busDate: Date) -> (stringRep: String, intRep: Int, colorRep: UIColor) {
+
+    func getBusTimeLeft(busDate: Date) -> (stringRep: String, colorRep: UIColor) {
         let dateNow = Date()
         let deltaTime = busDate.timeIntervalSince(dateNow)
         let busTimeInt = lround(deltaTime / 60)
@@ -144,9 +140,9 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
             timeLeftColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         }
 
-        return (busTimeStr, busTimeInt, timeLeftColor)
+        return (busTimeStr, timeLeftColor)
     }
-    
+
     func getBusType(busDestination: String) -> String {
         if busDestination == PROMTERMINUS {
             return "Promenade"

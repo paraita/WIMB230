@@ -118,3 +118,10 @@ Temporary Items
 .apdisk
 
 # End of https://www.gitignore.io/api/xcode,macos
+
+WIMB230/Alamofire.framework
+WIMB230/AlamofireObjectMapper.framework
+WIMB230/ObjectMapper.framework
+WIMB230/PullToRefresh.framework
+
+
