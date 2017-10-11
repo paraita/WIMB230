@@ -26,9 +26,9 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.fetch()
         }
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(refreshTableView),
-                                               name: NSNotification.Name(rawValue: "fetchedData"),
-                                               object: nil)
+                                          selector: #selector(refreshTableView),
+                                          name: NSNotification.Name(rawValue: "fetchedData"),
+                                          object: nil)
     }
 
     @objc func refreshTableView() {
@@ -54,7 +54,13 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.client.busPassages.count
+        let nbBusPassages = self.client.busPassages.count
+        if nbBusPassages > 0 {
+            self.tableView.separatorStyle = .none
+        } else {
+            self.tableView.separatorStyle = .singleLine
+        }
+        return nbBusPassages
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -166,8 +166,8 @@
                                 <rect key="frame" x="136" y="124" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZV-Aw-MBW">
-                                <rect key="frame" x="145" y="163" width="30" height="30"/>
-                                <state key="normal" title="Set">
+                                <rect key="frame" x="141" y="163" width="39" height="30"/>
+                                <state key="normal" title="Close">
                                     <color key="titleColor" red="0.95575004019999998" green="1" blue="0.98273799269999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
