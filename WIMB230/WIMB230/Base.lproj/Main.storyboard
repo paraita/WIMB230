@@ -57,7 +57,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1ee-gH-T2D">
-                                                    <rect key="frame" x="271" y="45" width="41" height="41"/>
+                                                    <rect key="frame" x="241" y="44" width="41" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="41" id="CKZ-1j-0DI"/>
                                                         <constraint firstAttribute="height" constant="41" id="zma-j7-Dfm"/>
@@ -73,16 +73,26 @@
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HM-YD-RD7">
+                                                    <rect key="frame" x="282" y="47" width="30" height="34"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <state key="normal" title="..."/>
+                                                    <connections>
+                                                        <action selector="displayOptions:" destination="3Ky-OV-NWn" eventType="touchUpInside" id="1PI-8g-JdE"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="1ee-gH-T2D" secondAttribute="bottom" constant="0.5" id="DlK-Qf-H0K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1ee-gH-T2D" secondAttribute="bottom" constant="1.5" id="DlK-Qf-H0K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3HM-YD-RD7" secondAttribute="bottom" constant="5.5" id="U1R-Zm-IJL"/>
                                                 <constraint firstItem="a2w-Mh-ohD" firstAttribute="trailing" secondItem="YHH-ry-eho" secondAttribute="trailingMargin" id="bxm-TB-rAf"/>
                                                 <constraint firstItem="a2w-Mh-ohD" firstAttribute="top" secondItem="YHH-ry-eho" secondAttribute="topMargin" id="ejV-6H-Hae"/>
                                                 <constraint firstItem="lqv-KO-0PT" firstAttribute="top" secondItem="YHH-ry-eho" secondAttribute="top" constant="1" id="g1N-YI-jqI"/>
                                                 <constraint firstItem="KCz-xH-woo" firstAttribute="leading" secondItem="YHH-ry-eho" secondAttribute="leadingMargin" constant="6" id="gWs-Ad-VON"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="KCz-xH-woo" secondAttribute="bottom" constant="6.5" id="iZV-Pw-ixR"/>
+                                                <constraint firstItem="3HM-YD-RD7" firstAttribute="trailing" secondItem="YHH-ry-eho" secondAttribute="trailingMargin" id="sjA-Ni-NMC"/>
                                                 <constraint firstItem="lqv-KO-0PT" firstAttribute="leading" secondItem="YHH-ry-eho" secondAttribute="leading" constant="14" id="yaP-rG-W2K"/>
-                                                <constraint firstItem="1ee-gH-T2D" firstAttribute="trailing" secondItem="YHH-ry-eho" secondAttribute="trailingMargin" id="ziI-if-EuA"/>
+                                                <constraint firstItem="1ee-gH-T2D" firstAttribute="trailing" secondItem="YHH-ry-eho" secondAttribute="trailingMargin" constant="-30" id="ziI-if-EuA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.12088152021169662" green="0.46705132722854614" blue="0.60586386919021606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,6 +100,7 @@
                                             <outlet property="busTime" destination="a2w-Mh-ohD" id="3oq-Uh-A4A"/>
                                             <outlet property="busTimeLeft" destination="KCz-xH-woo" id="k6m-ik-qYf"/>
                                             <outlet property="busType" destination="lqv-KO-0PT" id="xI8-0q-xYj"/>
+                                            <outlet property="optionsButton" destination="3HM-YD-RD7" id="30b-v2-sBw"/>
                                             <outlet property="realTimeBadge" destination="1ee-gH-T2D" id="YoI-k6-pSm"/>
                                         </connections>
                                     </tableViewCell>

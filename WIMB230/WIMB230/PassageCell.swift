@@ -15,6 +15,7 @@ class PassageCell: UITableViewCell {
     @IBOutlet var busTime: UILabel!
     @IBOutlet var busTimeLeft: UILabel!
     @IBOutlet var realTimeBadge: UIImageView!
+    @IBOutlet var optionsButton: UIButton!
 
     override func layoutSubviews() {
         self.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -23,5 +24,36 @@ class PassageCell: UITableViewCell {
         self.contentView.layer.cornerRadius = 10
         self.contentView.layer.borderWidth = 5
         self.contentView.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+
+    @IBAction func displayOptions(_ sender: UIButton) {
+        let title = "\(busType.text ?? "") at \(busTime.text ?? "")"
+        let rootViewController = UIApplication.shared.keyWindow?.rootViewController
+        let shareActivityVC = UIActivityViewController(activityItems: [title], applicationActivities: nil)
+        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
+
+        let sendButton = UIAlertAction(title: "Share",
+                                     style: .default,
+                                     handler: {_ -> Void in
+                                        print("[Send to] action")
+                                        rootViewController?.present(shareActivityVC,
+                                                                   animated: true,
+                                                                   completion: nil)
+        })
+        let addReminderButton = UIAlertAction(title: "Set reminder",
+                                            style: .default,
+                                            handler: {_ -> Void in
+                                                print("[Remind me] action")
+                                                
+        })
+        let cancelButton = UIAlertAction(title: "Cancel",
+                                       style: .cancel,
+                                       handler: {_ -> Void in
+                                        print("[Cancel] action")
+        })
+        alertController.addAction(sendButton)
+        alertController.addAction(addReminderButton)
+        alertController.addAction(cancelButton)
+        rootViewController?.present(alertController, animated: true, completion: nil)
     }
 }
