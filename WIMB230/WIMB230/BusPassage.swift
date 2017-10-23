@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 class BusPassage: Mappable {
-    let PROMTERMINUS = "Cathédrale-Vieille Ville"
+
     var busTime: String?
     var dest: String?
     var isRealTime: Bool?
@@ -27,13 +27,5 @@ class BusPassage: Mappable {
         busTime <- map["bus_time"]
         dest <- map["dest"]
         isRealTime <- map["is_real_time"]
-    }
-    
-    func getDisplayableDestination() -> String {
-        if dest == PROMTERMINUS {
-            return "Promenade"
-        } else {
-            return "Nice Nord"
-        }
     }
 }

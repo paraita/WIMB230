@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EventKit
 
 class PassageCell: UITableViewCell {
 
@@ -17,6 +18,7 @@ class PassageCell: UITableViewCell {
     @IBOutlet var realTimeBadge: UIImageView!
     @IBOutlet var optionsButton: UIButton!
 
+    var reminderSetter: ReminderSetter!
     var busPassage: BusPassage!
 
     override func layoutSubviews() {
@@ -47,7 +49,7 @@ class PassageCell: UITableViewCell {
                                             style: .default,
                                             handler: {_ -> Void in
                                                 print("[Remind me] action")
-                                                
+                                                self.reminderSetter.addReminder(self.busPassage)
         })
         let cancelButton = UIAlertAction(title: "Cancel",
                                        style: .cancel,
