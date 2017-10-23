@@ -87,11 +87,10 @@ UITextFieldDelegate, UIViewControllerPreviewingDelegate {
         cell.reminderSetter = self.reminderSetter
 
         // busTime
-        let busDate = busPassageFormatter.getBusDate(rawBusTime: busPassage.busTime!)
-        dateFormatter.dateFormat = "HH:mm"
-        cell.busTime.text = dateFormatter.string(from: busDate)
+        cell.busTime.text = busPassageFormatter.getDisplayableTime(busPassage.busTime!)
 
         // busTimeLeft
+        let busDate = busPassageFormatter.getBusDate(rawBusTime: busPassage.busTime!)
         let busTimeLeft = busPassageFormatter.getBusTimeLeft(busDate: busDate)
         cell.busTimeLeft.text = busTimeLeft.stringRep
         cell.busTimeLeft.backgroundColor = busTimeLeft.colorRep

@@ -12,8 +12,14 @@ import UIKit
 class BusPassageFormatter {
 
     static let PROMTERMINUS = "Cathédrale-Vieille Ville"
-    let dateFormatter = DateFormatter()
+    let fullDateFormatter = DateFormatter()
+    let timeDateFormatter = DateFormatter()
     
+    init() {
+        fullDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        timeDateFormatter.dateFormat = "HH:mm"
+    }
+
     func getDisplayableDestination(_ dest: String) -> String {
         if dest == BusPassageFormatter.PROMTERMINUS {
             return "Promenade"
@@ -21,7 +27,7 @@ class BusPassageFormatter {
             return "Nice Nord"
         }
     }
-    
+
     func getBusDate(rawBusTime: String) -> Date {
         guard let regex = try? NSRegularExpression(pattern: "\\..*$",
                                                    options: NSRegularExpression.Options.caseInsensitive)
@@ -35,22 +41,20 @@ class BusPassageFormatter {
                                                           range: range,
                                                           withTemplate: "")
             .replacingOccurrences(of: "T", with: " ")
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        if let dateBus = self.dateFormatter.date(from: cleanDateBus) {
+        if let dateBus = self.fullDateFormatter.date(from: cleanDateBus) {
             return dateBus
         } else {
             print("Parsing of the date [\(cleanDateBus)] failed !")
             return Date()
         }
     }
-    
+
     func getBusTimeLeft(busDate: Date) -> (stringRep: String, colorRep: UIColor) {
         let dateNow = Date()
         let deltaTime = busDate.timeIntervalSince(dateNow)
         let busTimeInt = lround(deltaTime / 60)
         var busTimeStr = "-\(busTimeInt) "
         var timeLeftColor: UIColor
-        
         if busTimeInt > 1 {
             busTimeStr += "minutes !"
         } else {
@@ -59,7 +63,6 @@ class BusPassageFormatter {
         if busTimeInt == 0 {
             busTimeStr = "Immediate !!!"
         }
-        
         if busTimeInt < 5 {
             timeLeftColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         } else if busTimeInt < 10 {
@@ -67,7 +70,11 @@ class BusPassageFormatter {
         } else {
             timeLeftColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         }
-        
         return (busTimeStr, timeLeftColor)
+    }
+
+    func getDisplayableTime(_ rawBusTime: String) -> String {
+        let date = getBusDate(rawBusTime: rawBusTime)
+        return timeDateFormatter.string(from: date)
     }
 }

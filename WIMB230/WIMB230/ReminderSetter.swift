@@ -28,7 +28,7 @@ class ReminderSetter {
     func addReminder(_ busPassage: BusPassage) {
         let reminder = EKReminder(eventStore: eventStore)
         let dest = busPassageFormatter.getDisplayableDestination(busPassage.dest!)
-        let busTime = busPassageFormatter.getBusDate(rawBusTime: busPassage.busTime!)
+        let busTime = busPassageFormatter.getDisplayableTime(busPassage.busTime!)
         let calendar = eventStore.defaultCalendarForNewReminders()
         reminder.title = "\(dest) at \(busTime)"
         reminder.calendar = calendar
