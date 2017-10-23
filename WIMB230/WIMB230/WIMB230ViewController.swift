@@ -11,14 +11,14 @@ import Alamofire
 import AlamofireObjectMapper
 import PullToRefresh
 
-class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
+class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,
+UITextFieldDelegate, UIViewControllerPreviewingDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
     let refresher = PullToRefreshBus(at: .top)
     let dateFormatter = DateFormatter()
     let client = WIMB230Client()
-    let PROMTERMINUS = "Cathédrale-Vieille Ville"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,9 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
                                           selector: #selector(refreshTableView),
                                           name: NSNotification.Name(rawValue: "fetchedData"),
                                           object: nil)
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: self.tableView)
+        }
     }
 
     @objc func refreshTableView() {
@@ -77,6 +80,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func configureCell(_ cell: PassageCell, atIndex index: Int) -> PassageCell {
         let busPassage = self.client.busPassages[index]
+        cell.busPassage = busPassage
 
         // busTime
         let busDate = getBusDate(rawBusTime: busPassage.busTime!)
@@ -91,7 +95,7 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.busTimeLeft.layer.cornerRadius = 8
 
         // busType
-        cell.busType.text = getBusType(busDestination: busPassage.dest!)
+        cell.busType.text = busPassage.getDisplayableDestination()
 
         // TODO: put a proper image
         if busPassage.isRealTime ?? false {
@@ -150,12 +154,22 @@ class WIMB230ViewController: UIViewController, UITableViewDelegate, UITableViewD
         return (busTimeStr, timeLeftColor)
     }
 
-    func getBusType(busDestination: String) -> String {
-        if busDestination == PROMTERMINUS {
-            return "Promenade"
-        } else {
-            return "Nice Nord"
-        }
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                           viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else {return nil}
+        guard let cell = tableView.cellForRow(at: indexPath) as? PassageCell else {return nil}
+        guard let passagePeekView = storyboard?.instantiateViewController(withIdentifier: "passagePeekView")
+            as? PassagePeekView
+            else {return nil}
+        passagePeekView.busPassage = cell.busPassage
+        passagePeekView.preferredContentSize = CGSize(width: 0.0, height: 200)
+        previewingContext.sourceRect = cell.frame
+        return passagePeekView
+    }
+
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                           commit viewControllerToCommit: UIViewController) {
+        //showDetailViewController(viewControllerToCommit, sender: self)
     }
 }
 

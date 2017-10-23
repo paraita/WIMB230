@@ -17,13 +17,16 @@ class PassageCell: UITableViewCell {
     @IBOutlet var realTimeBadge: UIImageView!
     @IBOutlet var optionsButton: UIButton!
 
+    var busPassage: BusPassage!
+
     override func layoutSubviews() {
-        self.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.layer.backgroundColor = UIColor.white.cgColor
         self.contentView.layer.backgroundColor = #colorLiteral(red: 0.1349048316, green: 0.5216068625, blue: 0.6738940477, alpha: 1)
         self.contentView.layer.masksToBounds = true
         self.contentView.layer.cornerRadius = 10
         self.contentView.layer.borderWidth = 5
-        self.contentView.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.contentView.layer.borderColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        self.clipsToBounds = true
     }
 
     @IBAction func displayOptions(_ sender: UIButton) {
