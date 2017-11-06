@@ -123,5 +123,8 @@ WIMB230/Alamofire.framework
 WIMB230/AlamofireObjectMapper.framework
 WIMB230/ObjectMapper.framework
 WIMB230/PullToRefresh.framework
-
+WIMB230/WIMB230/Alamofire.framework
+WIMB230/WIMB230/AlamofireObjectMapper.framework
+WIMB230/WIMB230/ObjectMapper.framework
+WIMB230/WIMB230/PullToRefresh.framework
 
