@@ -14,10 +14,14 @@ class BusPassageFormatter {
     static let PROMTERMINUS = "Cathédrale-Vieille Ville"
     let fullDateFormatter = DateFormatter()
     let timeDateFormatter = DateFormatter()
-    
+
     init() {
         fullDateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        //fullDateFormatter.timeZone = TimeZone(identifier: "Europe/Paris")!
+        //fullDateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         timeDateFormatter.dateFormat = "HH:mm"
+        //timeDateFormatter.timeZone = TimeZone(identifier: "Europe/Paris")!
+        //timeDateFormatter.timeZone = TimeZone(abbreviation: "UTC")
     }
 
     func getDisplayableDestination(_ dest: String) -> String {
@@ -36,12 +40,18 @@ class BusPassageFormatter {
                 return Date()
         }
         let range = NSRange(location: 0, length: rawBusTime.characters.count)
-        let cleanDateBus = regex.stringByReplacingMatches(in: rawBusTime,
+        let cleanDateBus1 = regex.stringByReplacingMatches(in: rawBusTime,
                                                           options: [],
                                                           range: range,
                                                           withTemplate: "")
             .replacingOccurrences(of: "T", with: " ")
+        let cleanDateBus = cleanDateBus1 as String
+        print("cleanDate: \(cleanDateBus)")
+        // TODO: l'heure est pas correcte ! elle affiche 2 heures de moins que prévu !!!!! xDDDDDDD
         if let dateBus = self.fullDateFormatter.date(from: cleanDateBus) {
+            let dateWrong = self.timeDateFormatter.string(from: dateBus)
+            print("fullDateFormatter: \(dateBus)")
+            print("timeDateFormatter: \(dateWrong)")
             return dateBus
         } else {
             print("Parsing of the date [\(cleanDateBus)] failed !")
@@ -51,6 +61,8 @@ class BusPassageFormatter {
 
     func getBusTimeLeft(busDate: Date) -> (stringRep: String, colorRep: UIColor) {
         let dateNow = Date()
+        //dateNow.
+        print("dateNow: \(dateNow)")
         let deltaTime = busDate.timeIntervalSince(dateNow)
         let busTimeInt = lround(deltaTime / 60)
         var busTimeStr = "-\(busTimeInt) "

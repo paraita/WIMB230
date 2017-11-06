@@ -32,7 +32,7 @@ class PassagePeekView: UIViewController {
             (action, viewController) -> Void in
             print("[send to] actions")
         }
-        let addReminderAction = UIPreviewAction(title: "Share", style: .default) {
+        let addReminderAction = UIPreviewAction(title: "Remind me", style: .default) {
             (action, viewController) -> Void in
             print("[Remind me] action")
         }

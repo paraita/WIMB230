@@ -29,27 +29,24 @@ class ReminderSetter {
         let reminder = EKReminder(eventStore: eventStore)
         let dest = busPassageFormatter.getDisplayableDestination(busPassage.dest!)
         let busTime = busPassageFormatter.getDisplayableTime(busPassage.busTime!)
-        let calendar = eventStore.defaultCalendarForNewReminders()
+        var busDate = busPassageFormatter.getBusDate(rawBusTime: busPassage.busTime!)
+        // hack for UTC+1 as long as I don't include the UTC offset server-side
+        //busDate.addTimeInterval(3600)
+        let calendarForReminders = eventStore.defaultCalendarForNewReminders()
+        let currentCalendar = Calendar.current
+        print("rawTime: \(busPassage.busTime!)")
+        print("date: \(busDate)")
+        let dateComponents = currentCalendar.dateComponents(in: TimeZone.current, from: busDate)
         reminder.title = "\(dest) at \(busTime)"
-        reminder.calendar = calendar
-//        reminder.dueDateComponents = DateComponents(calendar: calendar,
-//                                                    timeZone: TimeZone.current,
-//                                                    era: <#T##Int?#>,
-//                                                    year: <#T##Int?#>,
-//                                                    month: <#T##Int?#>,
-//                                                    day: <#T##Int?#>,
-//                                                    hour: <#T##Int?#>,
-//                                                    minute: <#T##Int?#>,
-//                                                    second: <#T##Int?#>,
-//                                                    nanosecond: <#T##Int?#>,
-//                                                    weekday: <#T##Int?#>,
-//                                                    weekdayOrdinal: <#T##Int?#>,
-//                                                    quarter: <#T##Int?#>,
-//                                                    weekOfMonth: <#T##Int?#>,
-//                                                    weekOfYear: <#T##Int?#>,
-//                                                    yearForWeekOfYear: <#T##Int?#>)
+        reminder.calendar = calendarForReminders
+        // try to remove the due date and keep the alarm only
+        reminder.dueDateComponents = dateComponents
+        // alarm will happen 2 minutes before the due date
+        //reminder.addAlarm(EKAlarm(absoluteDate: busDate.addingTimeInterval(-120)))
+        reminder.addAlarm(EKAlarm(absoluteDate: busDate))
         do {
             try eventStore.save(reminder, commit: true)
+            print("reminder: \(reminder)")
         } catch let error {
             print("Reminder failed with error \(error.localizedDescription)")
         }

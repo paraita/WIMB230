@@ -28,18 +28,18 @@
 		EDBD787A1F9A88FE00F6AF9D /* PassagePeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBD78791F9A88FE00F6AF9D /* PassagePeekView.swift */; };
 		EDBD787C1F9E59E700F6AF9D /* ReminderSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBD787B1F9E59E700F6AF9D /* ReminderSetter.swift */; };
 		EDBD787E1F9E6DB400F6AF9D /* BusPassageFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBD787D1F9E6DB400F6AF9D /* BusPassageFormatter.swift */; };
-		EDEF4E541F759A62006BBBC7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E501F759A3A006BBBC7 /* Alamofire.framework */; };
-		EDEF4E551F759A6A006BBBC7 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E521F759A3B006BBBC7 /* AlamofireObjectMapper.framework */; };
-		EDEF4E561F759A6F006BBBC7 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E531F759A3B006BBBC7 /* ObjectMapper.framework */; };
-		EDEF4E571F759A72006BBBC7 /* PullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E511F759A3A006BBBC7 /* PullToRefresh.framework */; };
-		EDEF4E581F759A7A006BBBC7 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E501F759A3A006BBBC7 /* Alamofire.framework */; };
-		EDEF4E591F759A7A006BBBC7 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E501F759A3A006BBBC7 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EDEF4E5A1F759A7A006BBBC7 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E521F759A3B006BBBC7 /* AlamofireObjectMapper.framework */; };
-		EDEF4E5B1F759A7A006BBBC7 /* AlamofireObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E521F759A3B006BBBC7 /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EDEF4E5C1F759A7A006BBBC7 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E531F759A3B006BBBC7 /* ObjectMapper.framework */; };
-		EDEF4E5D1F759A7A006BBBC7 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E531F759A3B006BBBC7 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EDEF4E5E1F759A7A006BBBC7 /* PullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E511F759A3A006BBBC7 /* PullToRefresh.framework */; };
-		EDEF4E5F1F759A7A006BBBC7 /* PullToRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDEF4E511F759A3A006BBBC7 /* PullToRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EDCBF31E1FB07DDA00A03125 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF31D1FB07DDA00A03125 /* Alamofire.framework */; };
+		EDCBF3221FB0857400A03125 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF31F1FB0857400A03125 /* AlamofireObjectMapper.framework */; };
+		EDCBF3231FB0857400A03125 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF3201FB0857400A03125 /* ObjectMapper.framework */; };
+		EDCBF3241FB0857400A03125 /* PullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF3211FB0857400A03125 /* PullToRefresh.framework */; };
+		EDCBF3251FB085B200A03125 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF31F1FB0857400A03125 /* AlamofireObjectMapper.framework */; };
+		EDCBF3261FB085B200A03125 /* AlamofireObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF31F1FB0857400A03125 /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EDCBF3271FB085B200A03125 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF3201FB0857400A03125 /* ObjectMapper.framework */; };
+		EDCBF3281FB085B200A03125 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF3201FB0857400A03125 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EDCBF3291FB085B200A03125 /* PullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF3211FB0857400A03125 /* PullToRefresh.framework */; };
+		EDCBF32A1FB085B200A03125 /* PullToRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF3211FB0857400A03125 /* PullToRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EDCBF32B1FB085B200A03125 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF31D1FB07DDA00A03125 /* Alamofire.framework */; };
+		EDCBF32C1FB085B200A03125 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EDCBF31D1FB07DDA00A03125 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,16 +60,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		ED0B99671F69106A00C02A5A /* Embed Frameworks */ = {
+		ED835A611FB058D100379C4C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EDEF4E5D1F759A7A006BBBC7 /* ObjectMapper.framework in Embed Frameworks */,
-				EDEF4E591F759A7A006BBBC7 /* Alamofire.framework in Embed Frameworks */,
-				EDEF4E5F1F759A7A006BBBC7 /* PullToRefresh.framework in Embed Frameworks */,
-				EDEF4E5B1F759A7A006BBBC7 /* AlamofireObjectMapper.framework in Embed Frameworks */,
+				EDCBF32A1FB085B200A03125 /* PullToRefresh.framework in Embed Frameworks */,
+				EDCBF3281FB085B200A03125 /* ObjectMapper.framework in Embed Frameworks */,
+				EDCBF3261FB085B200A03125 /* AlamofireObjectMapper.framework in Embed Frameworks */,
+				EDCBF32C1FB085B200A03125 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,10 +111,10 @@
 		EDBD78791F9A88FE00F6AF9D /* PassagePeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassagePeekView.swift; sourceTree = "<group>"; };
 		EDBD787B1F9E59E700F6AF9D /* ReminderSetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSetter.swift; sourceTree = "<group>"; };
 		EDBD787D1F9E6DB400F6AF9D /* BusPassageFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusPassageFormatter.swift; sourceTree = "<group>"; };
-		EDEF4E501F759A3A006BBBC7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		EDEF4E511F759A3A006BBBC7 /* PullToRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PullToRefresh.framework; path = ../Carthage/Build/iOS/PullToRefresh.framework; sourceTree = "<group>"; };
-		EDEF4E521F759A3B006BBBC7 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = ../Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
-		EDEF4E531F759A3B006BBBC7 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		EDCBF31D1FB07DDA00A03125 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		EDCBF31F1FB0857400A03125 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlamofireObjectMapper.framework; sourceTree = "<group>"; };
+		EDCBF3201FB0857400A03125 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ObjectMapper.framework; sourceTree = "<group>"; };
+		EDCBF3211FB0857400A03125 /* PullToRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PullToRefresh.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,14 +122,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDEF4E541F759A62006BBBC7 /* Alamofire.framework in Frameworks */,
-				EDEF4E5A1F759A7A006BBBC7 /* AlamofireObjectMapper.framework in Frameworks */,
-				EDEF4E5E1F759A7A006BBBC7 /* PullToRefresh.framework in Frameworks */,
-				EDEF4E551F759A6A006BBBC7 /* AlamofireObjectMapper.framework in Frameworks */,
-				EDEF4E561F759A6F006BBBC7 /* ObjectMapper.framework in Frameworks */,
-				EDEF4E581F759A7A006BBBC7 /* Alamofire.framework in Frameworks */,
-				EDEF4E571F759A72006BBBC7 /* PullToRefresh.framework in Frameworks */,
-				EDEF4E5C1F759A7A006BBBC7 /* ObjectMapper.framework in Frameworks */,
+				EDCBF3271FB085B200A03125 /* ObjectMapper.framework in Frameworks */,
+				EDCBF3291FB085B200A03125 /* PullToRefresh.framework in Frameworks */,
+				EDCBF3231FB0857400A03125 /* ObjectMapper.framework in Frameworks */,
+				EDCBF31E1FB07DDA00A03125 /* Alamofire.framework in Frameworks */,
+				EDCBF3241FB0857400A03125 /* PullToRefresh.framework in Frameworks */,
+				EDCBF3251FB085B200A03125 /* AlamofireObjectMapper.framework in Frameworks */,
+				EDCBF3221FB0857400A03125 /* AlamofireObjectMapper.framework in Frameworks */,
+				EDCBF32B1FB085B200A03125 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,10 +153,6 @@
 		ED342A8C1E3FCD1200D8D212 = {
 			isa = PBXGroup;
 			children = (
-				EDEF4E501F759A3A006BBBC7 /* Alamofire.framework */,
-				EDEF4E521F759A3B006BBBC7 /* AlamofireObjectMapper.framework */,
-				EDEF4E531F759A3B006BBBC7 /* ObjectMapper.framework */,
-				EDEF4E511F759A3A006BBBC7 /* PullToRefresh.framework */,
 				ED342A971E3FCD1200D8D212 /* WIMB230 */,
 				ED342AAC1E3FCD1300D8D212 /* WIMB230Tests */,
 				EDB19A8C1E539A3F0044C933 /* WIMB230Widget */,
@@ -178,6 +174,10 @@
 		ED342A971E3FCD1200D8D212 /* WIMB230 */ = {
 			isa = PBXGroup;
 			children = (
+				EDCBF31F1FB0857400A03125 /* AlamofireObjectMapper.framework */,
+				EDCBF3201FB0857400A03125 /* ObjectMapper.framework */,
+				EDCBF3211FB0857400A03125 /* PullToRefresh.framework */,
+				EDCBF31D1FB07DDA00A03125 /* Alamofire.framework */,
 				EDB19AA11E539ABD0044C933 /* WIMB230Client.swift */,
 				ED342A981E3FCD1200D8D212 /* AppDelegate.swift */,
 				ED342A9A1E3FCD1200D8D212 /* WIMB230ViewController.swift */,
@@ -234,8 +234,8 @@
 				ED342A921E3FCD1200D8D212 /* Frameworks */,
 				ED342A931E3FCD1200D8D212 /* Resources */,
 				EDB19A951E539A3F0044C933 /* Embed App Extensions */,
-				ED0B99671F69106A00C02A5A /* Embed Frameworks */,
 				ED1D91D31F7C2BB700D97865 /* ShellScript */,
+				ED835A611FB058D100379C4C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,7 +289,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = Paraita;
 				TargetAttributes = {
 					ED342A941E3FCD1200D8D212 = {
@@ -505,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -556,7 +556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -574,6 +574,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WIMB230",
 				);
 				INFOPLIST_FILE = WIMB230/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -594,6 +595,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/WIMB230",
 				);
 				INFOPLIST_FILE = WIMB230/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
