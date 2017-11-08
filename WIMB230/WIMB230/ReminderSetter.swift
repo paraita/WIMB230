@@ -29,19 +29,17 @@ class ReminderSetter {
         let reminder = EKReminder(eventStore: eventStore)
         let dest = busPassageFormatter.getDisplayableDestination(busPassage.dest!)
         let busTime = busPassageFormatter.getDisplayableTime(busPassage.busTime!)
-        var busDate = busPassageFormatter.getBusDate(rawBusTime: busPassage.busTime!)
-        // hack for UTC+1 as long as I don't include the UTC offset server-side
-        //busDate.addTimeInterval(3600)
+        let busDate = busPassageFormatter.getBusDate(rawBusTime: busPassage.busTime!)
         let calendarForReminders = eventStore.defaultCalendarForNewReminders()
         let currentCalendar = Calendar.current
-        print("rawTime: \(busPassage.busTime!)")
-        print("date: \(busDate)")
         let dateComponents = currentCalendar.dateComponents(in: TimeZone.current, from: busDate)
         reminder.title = "\(dest) at \(busTime)"
         reminder.calendar = calendarForReminders
-        // try to remove the due date and keep the alarm only
         reminder.dueDateComponents = dateComponents
         // alarm will happen 2 minutes before the due date
+        let dateNow = Date()
+        let timeToDate = busDate.timeIntervalSince(dateNow)
+        print("timeToDate: \(timeToDate) seconds")
         //reminder.addAlarm(EKAlarm(absoluteDate: busDate.addingTimeInterval(-120)))
         reminder.addAlarm(EKAlarm(absoluteDate: busDate))
         do {

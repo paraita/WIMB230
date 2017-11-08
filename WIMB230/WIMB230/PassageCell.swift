@@ -19,6 +19,7 @@ class PassageCell: UITableViewCell {
     @IBOutlet var optionsButton: UIButton!
 
     var reminderSetter: ReminderSetter!
+    var addReminderController: AddReminderController!
     var busPassage: BusPassage!
 
     override func layoutSubviews() {
@@ -36,26 +37,9 @@ class PassageCell: UITableViewCell {
         let rootViewController = UIApplication.shared.keyWindow?.rootViewController
         let shareActivityVC = UIActivityViewController(activityItems: [title], applicationActivities: nil)
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
-
-        let sendButton = UIAlertAction(title: "Share",
-                                     style: .default,
-                                     handler: {_ -> Void in
-                                        print("[Send to] action")
-                                        rootViewController?.present(shareActivityVC,
-                                                                   animated: true,
-                                                                   completion: nil)
-        })
-        let addReminderButton = UIAlertAction(title: "Set reminder",
-                                            style: .default,
-                                            handler: {_ -> Void in
-                                                print("[Remind me] action")
-                                                self.reminderSetter.addReminder(self.busPassage)
-        })
-        let cancelButton = UIAlertAction(title: "Cancel",
-                                       style: .cancel,
-                                       handler: {_ -> Void in
-                                        print("[Cancel] action")
-        })
+        let sendButton = self.addReminderController.createShareAction(rootViewController!, shareActivityVC)
+        let addReminderButton = self.addReminderController.createAddReminderAction()
+        let cancelButton = self.addReminderController.createCancelAction()
         alertController.addAction(sendButton)
         alertController.addAction(addReminderButton)
         alertController.addAction(cancelButton)

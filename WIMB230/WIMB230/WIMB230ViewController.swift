@@ -22,6 +22,7 @@ UITextFieldDelegate, UIViewControllerPreviewingDelegate {
     let client = WIMB230Client()
     let reminderSetter = ReminderSetter()
     let busPassageFormatter = BusPassageFormatter()
+    let addReminderController = AddReminderController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +86,7 @@ UITextFieldDelegate, UIViewControllerPreviewingDelegate {
         let busPassage = self.client.busPassages[index]
         cell.busPassage = busPassage
         cell.reminderSetter = self.reminderSetter
+        cell.addReminderController = self.addReminderController
 
         // busTime
         cell.busTime.text = busPassageFormatter.getDisplayableTime(busPassage.busTime!)
