@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378.75" y="99.295774647887328"/>
+            <point key="canvasLocation" x="-390" y="69"/>
         </scene>
         <!--Set Bus Stop View Controller-->
         <scene sceneID="k7r-mI-WZA">
@@ -266,48 +266,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdg-bz-dzU">
-                                <rect key="frame" x="0.0" y="135" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdg-bz-dzU">
+                                <rect key="frame" x="0.0" y="135" width="320" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="ATA-RH-fXO"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="fZR-Ao-89v" id="cMi-2S-hQF"/>
+                                    <outlet property="delegate" destination="fZR-Ao-89v" id="6pX-r0-tEM"/>
+                                </connections>
                             </pickerView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RkY-py-ecu">
-                                <rect key="frame" x="58" y="28" width="246" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RkY-py-ecu">
+                                <rect key="frame" x="58" y="46" width="246" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gig-mm-je9">
-                                <rect key="frame" x="16" y="33" width="34" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gig-mm-je9">
+                                <rect key="frame" x="16" y="51" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remind me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKw-E6-jM5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKw-E6-jM5">
                                 <rect key="frame" x="16" y="106" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meW-fg-VBs">
-                                <rect key="frame" x="97" y="305" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meW-fg-VBs">
+                                <rect key="frame" x="111" y="359" width="34" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveReminder:" destination="fZR-Ao-89v" eventType="touchUpInside" id="pIw-82-FMC"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vr7-eC-OF7">
-                                <rect key="frame" x="175" y="305" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vr7-eC-OF7">
+                                <rect key="frame" x="170" y="359" width="48" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="dismissView:" destination="fZR-Ao-89v" eventType="touchUpInside" id="jkl-Vn-xsB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13490483164787292" green="0.52160686254501343" blue="0.67389404773712158" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BKw-E6-jM5" firstAttribute="leading" secondItem="5QU-iQ-LUf" secondAttribute="leadingMargin" id="1JS-dN-lWC"/>
+                            <constraint firstItem="RkY-py-ecu" firstAttribute="top" secondItem="fJP-bh-wGV" secondAttribute="bottom" constant="26" id="4TQ-mz-Lxs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vr7-eC-OF7" secondAttribute="trailing" constant="86" id="6kn-Hc-SNo"/>
+                            <constraint firstItem="BKw-E6-jM5" firstAttribute="top" secondItem="RkY-py-ecu" secondAttribute="bottom" constant="30" id="8vf-vh-MZT"/>
+                            <constraint firstAttribute="trailing" secondItem="wdg-bz-dzU" secondAttribute="trailing" id="AZ9-hL-XfR"/>
+                            <constraint firstItem="Vr7-eC-OF7" firstAttribute="leading" secondItem="meW-fg-VBs" secondAttribute="trailing" constant="25" id="FWG-2b-j0S"/>
+                            <constraint firstItem="Vr7-eC-OF7" firstAttribute="top" secondItem="wdg-bz-dzU" secondAttribute="bottom" constant="8" id="QLd-cG-Le6"/>
+                            <constraint firstItem="Gig-mm-je9" firstAttribute="leading" secondItem="5QU-iQ-LUf" secondAttribute="leadingMargin" id="ehQ-d3-0sV"/>
+                            <constraint firstItem="Gig-mm-je9" firstAttribute="top" secondItem="fJP-bh-wGV" secondAttribute="bottom" constant="31" id="f3d-xZ-6Af"/>
+                            <constraint firstItem="RkY-py-ecu" firstAttribute="trailing" secondItem="5QU-iQ-LUf" secondAttribute="trailingMargin" id="fAP-XD-yl3"/>
+                            <constraint firstItem="wdg-bz-dzU" firstAttribute="leading" secondItem="5QU-iQ-LUf" secondAttribute="leading" id="gi3-tU-hqC"/>
+                            <constraint firstItem="wdg-bz-dzU" firstAttribute="top" secondItem="BKw-E6-jM5" secondAttribute="bottom" constant="8" id="hhb-fN-9CR"/>
+                            <constraint firstItem="RkY-py-ecu" firstAttribute="leading" secondItem="Gig-mm-je9" secondAttribute="trailing" constant="8" id="vJa-e9-WYV"/>
+                            <constraint firstItem="meW-fg-VBs" firstAttribute="top" secondItem="wdg-bz-dzU" secondAttribute="bottom" constant="8" id="vOP-jf-Ltg"/>
+                            <constraint firstItem="meW-fg-VBs" firstAttribute="leading" secondItem="5QU-iQ-LUf" secondAttribute="leadingMargin" constant="95" id="zb2-w6-C6C"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="Vr7-eC-OF7" id="thq-C2-hFX"/>
+                        <outlet property="nbMinutesPickerView" destination="wdg-bz-dzU" id="GAV-Cc-pKT"/>
+                        <outlet property="saveButton" destination="meW-fg-VBs" id="mee-nc-uNy"/>
+                        <outlet property="titleTextField" destination="RkY-py-ecu" id="Ran-PS-iXh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2k-4x-AgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -22,7 +22,7 @@ UITextFieldDelegate, UIViewControllerPreviewingDelegate {
     let client = WIMB230Client()
     let reminderSetter = ReminderSetter()
     let busPassageFormatter = BusPassageFormatter()
-    let addReminderController = AddReminderController()
+    let contextualActionsController = ContextualActionsController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,9 +84,15 @@ UITextFieldDelegate, UIViewControllerPreviewingDelegate {
 
     func configureCell(_ cell: PassageCell, atIndex index: Int) -> PassageCell {
         let busPassage = self.client.busPassages[index]
+        guard let addReminderView = self.storyboard?.instantiateViewController(withIdentifier: "addReminderView") as? AddReminderView else {
+            print("Shit happened during the configuration of the cell")
+            return cell
+        }
         cell.busPassage = busPassage
         cell.reminderSetter = self.reminderSetter
-        cell.addReminderController = self.addReminderController
+        cell.contextualActionsController = self.contextualActionsController
+        cell.parentView = self
+        cell.addReminderView = addReminderView
 
         // busTime
         cell.busTime.text = busPassageFormatter.getDisplayableTime(busPassage.busTime!)
@@ -98,6 +104,12 @@ UITextFieldDelegate, UIViewControllerPreviewingDelegate {
         cell.busTimeLeft.backgroundColor = busTimeLeft.colorRep
         cell.busTimeLeft.layer.masksToBounds = true
         cell.busTimeLeft.layer.cornerRadius = 8
+
+        // prepare the associated view
+        addReminderView.reminderSetter = self.reminderSetter
+        addReminderView.busPassageFormatter = busPassageFormatter
+        addReminderView.busPassage = busPassage
+        addReminderView.nbMinutes = busTimeLeft.nbMinutes
 
         // busType
         cell.busType.text = busPassageFormatter.getDisplayableDestination(busPassage.dest!)

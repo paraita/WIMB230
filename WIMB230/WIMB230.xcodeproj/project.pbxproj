@@ -10,7 +10,7 @@
 		ED09DD4C1F6A9B3100FBC284 /* BusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED09DD4B1F6A9B3100FBC284 /* BusView.xib */; };
 		ED09DD4E1F6A9C4600FBC284 /* PullToRefreshBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED09DD4D1F6A9C4600FBC284 /* PullToRefreshBus.swift */; };
 		ED159EA21FB211CD0004D8D9 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED159EA11FB211CD0004D8D9 /* AddReminderView.swift */; };
-		ED159EA41FB240FF0004D8D9 /* AddReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED159EA31FB240FF0004D8D9 /* AddReminderController.swift */; };
+		ED159EA41FB240FF0004D8D9 /* ContextualActionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED159EA31FB240FF0004D8D9 /* ContextualActionsController.swift */; };
 		ED19E2C61F7EEB7E005289E5 /* PassageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED19E2C51F7EEB7E005289E5 /* PassageCell.swift */; };
 		ED342A991E3FCD1200D8D212 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342A981E3FCD1200D8D212 /* AppDelegate.swift */; };
 		ED342A9B1E3FCD1200D8D212 /* WIMB230ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED342A9A1E3FCD1200D8D212 /* WIMB230ViewController.swift */; };
@@ -93,7 +93,7 @@
 		ED09DD4B1F6A9B3100FBC284 /* BusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusView.xib; sourceTree = "<group>"; };
 		ED09DD4D1F6A9C4600FBC284 /* PullToRefreshBus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshBus.swift; sourceTree = "<group>"; };
 		ED159EA11FB211CD0004D8D9 /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
-		ED159EA31FB240FF0004D8D9 /* AddReminderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderController.swift; sourceTree = "<group>"; };
+		ED159EA31FB240FF0004D8D9 /* ContextualActionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextualActionsController.swift; sourceTree = "<group>"; };
 		ED19E2C51F7EEB7E005289E5 /* PassageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassageCell.swift; sourceTree = "<group>"; };
 		ED342A951E3FCD1200D8D212 /* WIMB230.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMB230.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED342A981E3FCD1200D8D212 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 				EDBD787B1F9E59E700F6AF9D /* ReminderSetter.swift */,
 				EDBD787D1F9E6DB400F6AF9D /* BusPassageFormatter.swift */,
 				ED159EA11FB211CD0004D8D9 /* AddReminderView.swift */,
-				ED159EA31FB240FF0004D8D9 /* AddReminderController.swift */,
+				ED159EA31FB240FF0004D8D9 /* ContextualActionsController.swift */,
 			);
 			path = WIMB230;
 			sourceTree = "<group>";
@@ -399,7 +399,7 @@
 				EDBD787A1F9A88FE00F6AF9D /* PassagePeekView.swift in Sources */,
 				ED159EA21FB211CD0004D8D9 /* AddReminderView.swift in Sources */,
 				ED09DD4E1F6A9C4600FBC284 /* PullToRefreshBus.swift in Sources */,
-				ED159EA41FB240FF0004D8D9 /* AddReminderController.swift in Sources */,
+				ED159EA41FB240FF0004D8D9 /* ContextualActionsController.swift in Sources */,
 				ED342ACC1E3FD7C500D8D212 /* BusPassage.swift in Sources */,
 				ED342A991E3FCD1200D8D212 /* AppDelegate.swift in Sources */,
 			);

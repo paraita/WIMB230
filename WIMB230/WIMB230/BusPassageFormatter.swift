@@ -47,7 +47,6 @@ class BusPassageFormatter {
             .replacingOccurrences(of: "T", with: " ")
         let cleanDateBus = cleanDateBus1 as String
         print("cleanDate: \(cleanDateBus)")
-        // TODO: l'heure est pas correcte ! elle affiche 2 heures de moins que prévu !!!!! xDDDDDDD
         if let dateBus = self.fullDateFormatter.date(from: cleanDateBus) {
             let dateWrong = self.timeDateFormatter.string(from: dateBus)
             print("fullDateFormatter: \(dateBus)")
@@ -59,9 +58,8 @@ class BusPassageFormatter {
         }
     }
 
-    func getBusTimeLeft(busDate: Date) -> (stringRep: String, colorRep: UIColor) {
+    func getBusTimeLeft(busDate: Date) -> (nbMinutes: Int, stringRep: String, colorRep: UIColor) {
         let dateNow = Date()
-        //dateNow.
         print("dateNow: \(dateNow)")
         let deltaTime = busDate.timeIntervalSince(dateNow)
         let busTimeInt = lround(deltaTime / 60)
@@ -82,7 +80,7 @@ class BusPassageFormatter {
         } else {
             timeLeftColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         }
-        return (busTimeStr, timeLeftColor)
+        return (busTimeInt, busTimeStr, timeLeftColor)
     }
 
     func getDisplayableTime(_ rawBusTime: String) -> String {

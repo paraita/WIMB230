@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AddReminderController {
+class ContextualActionsController {
 
     func createShareAction(_ rootViewCon: UIViewController, _ activityViewCon: UIActivityViewController) -> UIAlertAction {
         return UIAlertAction(title: "Share",
@@ -20,13 +20,13 @@ class AddReminderController {
         })
     }
 
-    func createAddReminderAction() -> UIAlertAction {
+    func createAddReminderAction(_ presenterView: UIViewController, _ toPresent: AddReminderView, _ reminderSetter: ReminderSetter) -> UIAlertAction {
         return UIAlertAction(title: "Set reminder",
                              style: .default,
                              handler: {_ -> Void in
                                 print("[Remind me] action")
-                                //self.reminderSetter.addReminder(self.busPassage)
-                                // TODO should display the Add Reminder View
+                                toPresent.reminderSetter = reminderSetter
+                                presenterView.present(toPresent, animated: true, completion: nil)
         })
     }
 

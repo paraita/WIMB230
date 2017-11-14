@@ -25,23 +25,18 @@ class ReminderSetter {
         })
     }
 
-    func addReminder(_ busPassage: BusPassage) {
+    func addReminder(_ busPassage: BusPassage, _ title: String, _ offsetInSeconds: Int) {
         let reminder = EKReminder(eventStore: eventStore)
-        let dest = busPassageFormatter.getDisplayableDestination(busPassage.dest!)
-        let busTime = busPassageFormatter.getDisplayableTime(busPassage.busTime!)
         let busDate = busPassageFormatter.getBusDate(rawBusTime: busPassage.busTime!)
         let calendarForReminders = eventStore.defaultCalendarForNewReminders()
         let currentCalendar = Calendar.current
         let dateComponents = currentCalendar.dateComponents(in: TimeZone.current, from: busDate)
-        reminder.title = "\(dest) at \(busTime)"
+        reminder.title = title
         reminder.calendar = calendarForReminders
         reminder.dueDateComponents = dateComponents
-        // alarm will happen 2 minutes before the due date
-        let dateNow = Date()
-        let timeToDate = busDate.timeIntervalSince(dateNow)
-        print("timeToDate: \(timeToDate) seconds")
-        //reminder.addAlarm(EKAlarm(absoluteDate: busDate.addingTimeInterval(-120)))
-        reminder.addAlarm(EKAlarm(absoluteDate: busDate))
+        let timeDelta = TimeInterval(-offsetInSeconds)
+        let alarm = EKAlarm(absoluteDate: busDate.addingTimeInterval(timeDelta))
+        reminder.addAlarm(alarm)
         do {
             try eventStore.save(reminder, commit: true)
             print("reminder: \(reminder)")

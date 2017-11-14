@@ -19,8 +19,10 @@ class PassageCell: UITableViewCell {
     @IBOutlet var optionsButton: UIButton!
 
     var reminderSetter: ReminderSetter!
-    var addReminderController: AddReminderController!
+    var contextualActionsController: ContextualActionsController!
     var busPassage: BusPassage!
+    var parentView: UIViewController!
+    var addReminderView: AddReminderView!
 
     override func layoutSubviews() {
         self.layer.backgroundColor = UIColor.white.cgColor
@@ -37,9 +39,11 @@ class PassageCell: UITableViewCell {
         let rootViewController = UIApplication.shared.keyWindow?.rootViewController
         let shareActivityVC = UIActivityViewController(activityItems: [title], applicationActivities: nil)
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
-        let sendButton = self.addReminderController.createShareAction(rootViewController!, shareActivityVC)
-        let addReminderButton = self.addReminderController.createAddReminderAction()
-        let cancelButton = self.addReminderController.createCancelAction()
+        let sendButton = self.contextualActionsController.createShareAction(rootViewController!, shareActivityVC)
+        let addReminderButton = self.contextualActionsController.createAddReminderAction(parentView,
+                                                                                 addReminderView,
+                                                                                 reminderSetter)
+        let cancelButton = self.contextualActionsController.createCancelAction()
         alertController.addAction(sendButton)
         alertController.addAction(addReminderButton)
         alertController.addAction(cancelButton)

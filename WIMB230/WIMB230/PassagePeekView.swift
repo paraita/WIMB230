@@ -16,7 +16,7 @@ class PassagePeekView: UIViewController {
     @IBOutlet var busTimeLeft: UILabel!
 
     var busPassage: BusPassage?
-    let addReminderController = AddReminderController()
+    let addReminderController = ContextualActionsController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
