@@ -11,33 +11,51 @@ import UIKit
 
 class ContextualActionsController {
 
-    func createShareAction(_ rootViewCon: UIViewController, _ activityViewCon: UIActivityViewController) -> UIAlertAction {
+    func shareAction(_ rootViewCon: UIViewController,
+                     _ activityViewCon: UIActivityViewController) {
+        print("[Send to] action")
+        rootViewCon.present(activityViewCon, animated: true, completion: nil)
+    }
+
+    func addReminderAction(_ presenterView: UIViewController,
+                           _ toPresent: AddReminderView,
+                           _ reminderSetter: ReminderSetter) {
+        print("[Remind me] action")
+        toPresent.reminderSetter = reminderSetter
+        presenterView.present(toPresent, animated: true, completion: nil)
+    }
+
+    func cancelAction() {
+        print("[Cancel] action")
+    }
+
+    func createShareAction(_ rootViewCon: UIViewController,
+                           _ activityViewCon: UIActivityViewController) -> UIAlertAction {
         return UIAlertAction(title: "Share",
-                             style: .default,
-                             handler: {_ -> Void in
-                                print("[Send to] action")
-                                rootViewCon.present(activityViewCon, animated: true, completion: nil)
+                          style: .default,
+                          handler: { _ -> Void in
+                            self.shareAction(rootViewCon, activityViewCon)
         })
     }
 
-    func createAddReminderAction(_ presenterView: UIViewController, _ toPresent: AddReminderView, _ reminderSetter: ReminderSetter) -> UIAlertAction {
+    func createAddReminderAction(_ presenterView: UIViewController,
+                                 _ toPresent: AddReminderView,
+                                 _ reminderSetter: ReminderSetter) -> UIAlertAction {
         return UIAlertAction(title: "Set reminder",
-                             style: .default,
-                             handler: {_ -> Void in
-                                print("[Remind me] action")
-                                toPresent.reminderSetter = reminderSetter
-                                presenterView.present(toPresent, animated: true, completion: nil)
+                          style: .default,
+                          handler: {_ -> Void in
+                            self.addReminderAction(presenterView, toPresent, reminderSetter)
         })
     }
 
     func createCancelAction() -> UIAlertAction {
         return UIAlertAction(title: "Cancel",
-                             style: .cancel,
-                             handler: {_ -> Void in
-                                print("[Cancel] action")
+                          style: .cancel,
+                          handler: {_ -> Void in
+                            self.cancelAction()
         })
     }
-    
+
     func createSharePreviewAction() -> UIPreviewAction {
         return UIPreviewAction(title: "Share", style: .default) {
             (action, viewController) -> Void in

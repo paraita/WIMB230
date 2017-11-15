@@ -29,8 +29,8 @@ class PassagePeekView: UIViewController {
 
     override var previewActionItems: [UIPreviewActionItem] {
         print("loading the previewActions")
-        let shareAction = self.addReminderController.createAddReminderPreviewAction()
-        let addReminderAction = self.addReminderController.createSharePreviewAction()
+        let shareAction = self.addReminderController.createSharePreviewAction()
+        let addReminderAction = self.addReminderController.createAddReminderPreviewAction()
         let cancelAction = self.addReminderController.createCancelPreviewAction()
         return [shareAction, addReminderAction, cancelAction]
     }

@@ -34,8 +34,9 @@ class ReminderSetter {
         reminder.title = title
         reminder.calendar = calendarForReminders
         reminder.dueDateComponents = dateComponents
-        let timeDelta = TimeInterval(-offsetInSeconds)
-        let alarm = EKAlarm(absoluteDate: busDate.addingTimeInterval(timeDelta))
+        let dateNow = Date()
+        let timeDelta = TimeInterval(offsetInSeconds)
+        let alarm = EKAlarm(absoluteDate: dateNow.addingTimeInterval(timeDelta))
         reminder.addAlarm(alarm)
         do {
             try eventStore.save(reminder, commit: true)
