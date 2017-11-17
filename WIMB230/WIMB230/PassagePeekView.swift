@@ -16,6 +16,9 @@ class PassagePeekView: UIViewController {
     @IBOutlet var busTimeLeft: UILabel!
 
     var busPassage: BusPassage?
+    var reminderSetter: ReminderSetter!
+    var parentView: UIViewController!
+    var addReminderView: AddReminderView!
     let addReminderController = ContextualActionsController()
 
     override func viewDidLoad() {
@@ -29,8 +32,11 @@ class PassagePeekView: UIViewController {
 
     override var previewActionItems: [UIPreviewActionItem] {
         print("loading the previewActions")
-        let shareAction = self.addReminderController.createSharePreviewAction()
-        let addReminderAction = self.addReminderController.createAddReminderPreviewAction()
+        let title = "\(busType.text ?? "") at \(busTime.text ?? "")"
+        let rootViewController = UIApplication.shared.keyWindow?.rootViewController
+        let shareActivityVC = UIActivityViewController(activityItems: [title], applicationActivities: nil)
+        let shareAction = self.addReminderController.createSharePreviewAction(rootViewController!, shareActivityVC)
+        let addReminderAction = self.addReminderController.createAddReminderPreviewAction(self.parentView, self.addReminderView, self.reminderSetter)
         let cancelAction = self.addReminderController.createCancelPreviewAction()
         return [shareAction, addReminderAction, cancelAction]
     }

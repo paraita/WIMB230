@@ -56,24 +56,28 @@ class ContextualActionsController {
         })
     }
 
-    func createSharePreviewAction() -> UIPreviewAction {
+    func createSharePreviewAction(_ rootViewCon: UIViewController,
+                                  _ activityViewCon: UIActivityViewController) -> UIPreviewAction {
         return UIPreviewAction(title: "Share", style: .default) {
             (action, viewController) -> Void in
-            print("[send to] actions")
+            self.shareAction(rootViewCon, activityViewCon)
         }
     }
     
-    func createAddReminderPreviewAction() -> UIPreviewAction {
-        return UIPreviewAction(title: "Remind me", style: .default) {
+    func createAddReminderPreviewAction(_ presenterView: UIViewController,
+                                        _ toPresent: AddReminderView,
+                                        _ reminderSetter: ReminderSetter) -> UIPreviewAction {
+        return UIPreviewAction(title: "Set reminder", style: .default) {
             (action, viewController) -> Void in
-            print("[Remind me] action")
+            toPresent.reminderSetter = reminderSetter
+            presenterView.present(toPresent, animated: true, completion: nil)
         }
     }
     
     func createCancelPreviewAction() -> UIPreviewAction {
         return UIPreviewAction(title: "Cancel", style: .destructive) {
             (action, viewController) -> Void in
-            print("[Cancel] action")
+            self.cancelAction()
         }
     }
 }

@@ -131,6 +131,9 @@ UITextFieldDelegate, UIViewControllerPreviewingDelegate {
             else {return nil}
         passagePeekView.busPassage = cell.busPassage
         passagePeekView.preferredContentSize = CGSize(width: 0.0, height: 200)
+        passagePeekView.parentView = self
+        passagePeekView.reminderSetter = cell.reminderSetter
+        passagePeekView.addReminderView = cell.addReminderView
         previewingContext.sourceRect = cell.frame
         return passagePeekView
     }
