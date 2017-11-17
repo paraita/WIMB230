@@ -36,7 +36,10 @@ class PassagePeekView: UIViewController {
         let rootViewController = UIApplication.shared.keyWindow?.rootViewController
         let shareActivityVC = UIActivityViewController(activityItems: [title], applicationActivities: nil)
         let shareAction = self.addReminderController.createSharePreviewAction(rootViewController!, shareActivityVC)
-        let addReminderAction = self.addReminderController.createAddReminderPreviewAction(self.parentView, self.addReminderView, self.reminderSetter)
+        let createAction = self.addReminderController.createAddReminderPreviewAction
+        let addReminderAction = createAction(self.parentView,
+                                             self.addReminderView,
+                                             self.reminderSetter)
         let cancelAction = self.addReminderController.createCancelPreviewAction()
         return [shareAction, addReminderAction, cancelAction]
     }
